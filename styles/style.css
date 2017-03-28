@@ -15,6 +15,7 @@ body {
 }
 
 .logo {
+	position: relative;
 	margin-top: 10%;
 	margin-bottom: 10%;
 	text-align: center;
@@ -29,6 +30,74 @@ body {
 #facebook-sign-in,
 #google-sign-in {
 	width: 250px;
+}
+
+#hold-the-logo {
+	position:relative;
+}
+
+#bacon {
+	display: none;
+	position: absolute;
+	top: 25px;
+	left: 210px;
+	width: 80px;
+}
+
+#bread {
+	display: none;
+	position: absolute;
+	top: 38px;
+	left: 203px;
+	width: 90px;
+}
+
+#cheese {
+	display: none;
+	position: absolute;
+	top: 33px;
+	left: 208px;
+	width: 80px;
+}
+
+#egg {
+	display: none;
+	position: absolute;
+	top: 33px;
+	left: 195px;
+	width: 95px;
+}
+
+#milk {
+	display: none;
+	position: absolute;
+	top: 20px;
+	left: 225px;
+	height: 90px;
+}
+
+#peanuts {
+	display: none;
+	position: absolute;
+	top: 40px;
+	left: 198px;
+	width: 95px;
+}
+
+#pepper {
+	display: none;
+	position: absolute;
+	top: 30px;
+	left: 205px;
+	height: 80px;
+}
+
+#tomatoes {
+	display: none;
+	position: absolute;
+	top: 30px;
+	left: 198px;
+	width: 95px;
 }
 
 form {
