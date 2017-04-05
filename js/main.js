@@ -46,6 +46,10 @@ function tomatoesFade() {
   	});
 }
 
+// function slideLeft() {
+//    $('body').addClass('slideLeftOut');
+// }
+
 $(document).ready(function() {
    baconFade();
 });

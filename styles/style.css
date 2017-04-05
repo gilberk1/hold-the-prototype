@@ -1,17 +1,15 @@
 html,
 body {
-	font-family: 'Mallanna', sans-serif;
-}
-
-.container {
-	margin-left: auto;
-	margin-right: auto;
-	width: 375px;
-	height: 667px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 0.8px;
 }
 
 #status-bar {
-	width: 375px;
+	width: 100%;
+	display: block;
 }
 
 .logo {
@@ -29,7 +27,7 @@ body {
 #hold-the-logo,
 #facebook-sign-in,
 #google-sign-in {
-	width: 250px;
+	width: 66.66%;
 }
 
 #hold-the-logo {
@@ -39,65 +37,65 @@ body {
 #bacon {
 	display: none;
 	position: absolute;
-	top: 25px;
-	left: 210px;
-	width: 80px;
+	top: 18%;
+	left: 56%;
+	width: 21.33%;
 }
 
 #bread {
 	display: none;
 	position: absolute;
-	top: 38px;
-	left: 203px;
-	width: 90px;
+	top: 28%;
+	left: 54%;
+	width: 24%;
 }
 
 #cheese {
 	display: none;
 	position: absolute;
-	top: 33px;
-	left: 208px;
-	width: 80px;
+	top: 25%;
+	left: 55.46%;
+	width: 21.33%;
 }
 
 #egg {
 	display: none;
 	position: absolute;
-	top: 33px;
-	left: 195px;
-	width: 95px;
+	top: 24%;
+	left: 53%;
+	width: 25.33%;
 }
 
 #milk {
 	display: none;
 	position: absolute;
-	top: 20px;
-	left: 225px;
-	height: 90px;
+	top: 16%;
+	left: 60%;
+	width: 12%;
 }
 
 #peanuts {
 	display: none;
 	position: absolute;
-	top: 40px;
-	left: 198px;
-	width: 95px;
+	top: 30%;
+	left: 52.8%;
+	width: 25.33%;
 }
 
 #pepper {
 	display: none;
 	position: absolute;
-	top: 30px;
-	left: 205px;
-	height: 80px;
+	top: 22%;
+	left: 55%;
+	width: 20%;
 }
 
 #tomatoes {
 	display: none;
 	position: absolute;
-	top: 30px;
-	left: 198px;
-	width: 95px;
+	top: 23%;
+	left: 52.8%;
+	width: 25.33%;
 }
 
 form {
@@ -115,8 +113,8 @@ button:focus {
 
 .input-container input {
 	font-family: 'Mallanna', sans-serif;
-	text-indent: 60px;
-	width: 270px;
+	text-indent: 16%;
+	width: 72%;
 	margin-bottom: 3%;
 	height: 40px;
 	border: solid 1px #8C8C8C;
@@ -126,20 +124,20 @@ button:focus {
 
 #email-icon { 
   	position: absolute;
-  	top: 13px;
-  	left: 70px;
-  	width: 25px;
+  	top: 25%;
+  	left: 17%;
+  	width: 6.66%;
 }
 
 #password-icon { 
   	position: absolute;
-  	top: 10px;
-  	left: 75px;
-  	width: 15px;
+  	top: 18%;
+  	left: 18.75%;
+  	width: 4%;
 }
 
 #sign-in-button {
-	width: 270px;
+	width: 72%;
 	background-color: transparent;
 	margin-bottom: 5%;
 	height: 40px;
@@ -151,7 +149,7 @@ button:focus {
 
 fieldset.or-line {
 	margin: auto;
-	width: 250px;
+	width: 66.66%;
     border-top: 1px solid #000000;
     border-bottom: none;
     border-left: none;
@@ -161,12 +159,13 @@ fieldset.or-line {
 }
 
 fieldset.or-line legend {
+	font-size: 12px;
 	font-style: italic;
     padding: 5px 10px;
 }
 
 #password-sign-up {
-	width: 270px;
+	width: 72%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -176,5 +175,103 @@ h4 {
 	color: #FFFFFF;
 	font-size: 14px;
 	text-decoration: underline;
+	text-align: center;
+}
+
+.header {
+	display: block;
+	background-color: #FFFFFF;
+	opacity: .9;
+	height: 44px;
+	box-shadow: 0px .5px 0px rgba(0, 0, 0, 0.7);
+	text-align: center;
+}
+
+#hold-the-word {
+	margin-left: 40px;
+	height: 44px;
+	display: inline-block;
+}
+
+#profile-icon {
+	height: 40px;
+	display: block;
+    float: right;
+    margin-right: 15px;
+    border: solid .5px #8C8C8C;
+    border-radius: 25px;
+}
+
+.welcome {
+	display: block;
+	height: 100px;
+	border-bottom: solid .5px rgba(140, 140, 140, 0.7);
+}
+
+h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #000000;
+	font-size: 16px;
+	text-align: center;
+}
+
+h2 {
+	margin:0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #000000;
+	font-size: 18px;
+	text-align: center;
+}
+
+.recipes {
+	margin-left: 4%;
+	margin-right: 4%;
+
+}
+
+.recipe-container {
+	position: relative;
+	width: 50%;
+	float: left;
+	margin-bottom: 2%;
+}
+
+.recipe-image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 150px;
+	opacity: .60;
+}
+
+h5 {
+	font-size: 14px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.heart-outline {
+	position: absolute;
+	top: 5%;
+	left: 13%;
+	width: 18%;
+
+}
+
+.tab-bar {
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	display: block;
+	background-color: #F9F9F9;
+	opacity: .9;
+	height: 50px;
+	box-shadow: 0px -0.5px 0px rgba(0, 0, 0, 0.7);
 	text-align: center;
 }

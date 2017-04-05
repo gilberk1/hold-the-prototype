@@ -2,50 +2,48 @@
 <html>
 	<head>
 		<title>Hold the...</title>
-		<link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
 		<link rel = "stylesheet" href="styles/style.css">
 		<link rel = "stylesheet" href="styles/animate.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src = "js/main.js"></script>
 	</head>
-	<body>
-		<div class = "container" style = "background-color: #84ba4d">
-			<img id = "status-bar" src = "images/Status Bar.png">
-			<div class = "logo">
-				<img id = "hold-the-logo" src = "images/Full Logo.png">
-				<img id = "bacon" src = "images/food/Bacon.png">
-				<img id = "bread" src = "images/food/Bread.png">
-				<img id = "cheese" src = "images/food/Cheese.png">
-				<img id = "egg" src = "images/food/Egg.png">
-				<img id = "milk" src = "images/food/Milk.png">
-				<img id = "peanuts" src = "images/food/Peanuts.png">
-				<img id = "pepper" src = "images/food/Pepper.png">
-				<img id = "tomatoes" src = "images/food/Tomatoes.png">
+	<body style = "background-color: #84ba4d">
+		<img id = "status-bar" src = "images/Status Bar.png">
+		<div class = "logo">
+			<img id = "hold-the-logo" src = "images/Full Logo.png">
+			<img id = "bacon" src = "images/food/Bacon.png">
+			<img id = "bread" src = "images/food/Bread.png">
+			<img id = "cheese" src = "images/food/Cheese.png">
+			<img id = "egg" src = "images/food/Egg.png">
+			<img id = "milk" src = "images/food/Milk.png">
+			<img id = "peanuts" src = "images/food/Peanuts.png">
+			<img id = "pepper" src = "images/food/Pepper.png">
+			<img id = "tomatoes" src = "images/food/Tomatoes.png">
+		</div>
+		<form action = "dashboard.html" onClick = "slideLeft()">
+			<div class="input-container">
+				<img id = "email-icon" src = "images/Envelope.png">
+			  	<input type = "email" name = "email" placeholder = "Email Address">
 			</div>
-			<form>
-				<div class="input-container">
-					<img id = "email-icon" src = "images/Envelope.png">
-				  	<input type = "email" name = "email" placeholder = "Email Address">
-				</div>
-				<div class="input-container">
-					<img id = "password-icon" src = "images/Lock.png">
-				  	<input type = "password" name = "password" placeholder = "Password">
-				</div>
-				<button id = "sign-in-button" type = "submit">SIGN IN</button>
-			</form>
-			<fieldset class="or-line">
-			    <legend> or </legend>
-			</fieldset>
-			<div class = "facebook">
-				<img id = "facebook-sign-in" src = "images/Facebook Login.png">
+			<div class="input-container">
+				<img id = "password-icon" src = "images/Lock.png">
+			  	<input type = "password" name = "password" placeholder = "Password">
 			</div>
-			<div class = "google">
-				<img id = "google-sign-in" src = "images/Google Login.png">
-			</div>
-			<div id = "password-sign-up">
-				<h4 style = "float:left">Forgot Password?</h4>
-				<h4 style = "float:right">New Here? Sign Up!</h4>
-			</div>
+			<button id = "sign-in-button" type = "submit">SIGN IN</button>
+		</form>
+		<fieldset class="or-line">
+		    <legend> or </legend>
+		</fieldset>
+		<div class = "facebook">
+			<img id = "facebook-sign-in" src = "images/Facebook Login.png">
+		</div>
+		<div class = "google">
+			<img id = "google-sign-in" src = "images/Google Login.png">
+		</div>
+		<div id = "password-sign-up">
+			<h4 style = "float:left">Forgot Password?</h4>
+			<h4 style = "float:right">New Here? Sign Up!</h4>
 		</div>
 	</body>
 </html>
