@@ -5,7 +5,8 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
-	letter-spacing: 0.8px;
+	letter-spacing: 0.5px;
+	font-weight: 300;
 }
 
 #demo {
@@ -48,6 +49,9 @@ body {
 	width: 100%;
 	height: 20px;
 	display: block;
+	background-color: #FFFFFF;
+	opacity: .9;
+	z-index: 1000;
 }
 
 .logo {
@@ -147,13 +151,18 @@ button:focus {
 }
 
 .input-container {
+	display: block;
 	position: relative;
+	width: 72%;
+	text-align: center;
+	margin: auto;
 }
 
 .input-container input {
 	font-family: 'Mallanna', sans-serif;
-	text-indent: 16%;
-	width: 72%;
+	text-indent: 50px;
+	width: 100%;
+	padding: 0;
 	margin-bottom: 3%;
 	height: 40px;
 	border: solid 1px #8C8C8C;
@@ -163,16 +172,16 @@ button:focus {
 
 #email-icon { 
   	position: absolute;
-  	top: 25%;
-  	left: 17%;
-  	width: 6.66%;
+  	top: 13px;
+  	left: 13px;
+  	width: 25px;
 }
 
 #password-icon { 
   	position: absolute;
-  	top: 18%;
-  	left: 18.75%;
-  	width: 4%;
+  	top: 9px;
+  	left:19px;
+  	width: 15px;
 }
 
 #sign-in-button {
@@ -221,9 +230,11 @@ h4 {
 .header {
 	position: fixed;
 	top: 0;
+	z-index: 1000;
 }
 
 .top-bar {
+	width: 100%;
 	display: block;
 	background-color: #FFFFFF;
 	opacity: .9;
@@ -232,16 +243,28 @@ h4 {
 	text-align: center;
 }
 
+.top-container {
+	height: 44px;
+	width: 33.33%;
+	float: left;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
 #hold-the-word {
-	margin-left: 40px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
 	height: 44px;
 	display: inline-block;
 }
 
 #profile-icon {
-	height: 40px;
+	height: 35px;
 	display: block;
     float: right;
+    margin-top: 2px;
     margin-right: 15px;
     border: solid .5px #8C8C8C;
     border-radius: 25px;
@@ -271,8 +294,8 @@ h3 {
 
 h2 {
 	margin:0;
-	padding-top: 30px;
-	padding-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 10px;
 	color: #000000;
 	font-size: 18px;
 	text-align: center;
@@ -280,8 +303,8 @@ h2 {
 
 .recipes {
 	position: relative;
+	display: block;
 	width: 95%;
-	height: 425px;
 	text-align: center;
 	margin: auto;
 }
@@ -289,7 +312,7 @@ h2 {
 .recipe-container {
 	position: relative;
 	float: left;
-	margin-top: 4%;
+	margin-top: 3%;
 	margin-left: 4%;
 	margin-right: 4%;
 }
@@ -307,6 +330,7 @@ h5 {
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	font-weight: 300;
 }
 
 .heart-outline {
@@ -319,7 +343,7 @@ h5 {
 .tab-bar {
   	position: fixed;
 	width: 100%;
-	bottom: 0px;
+	bottom: 0;
 	display: block;
 	background-color: #F9F9F9;
 	opacity: .9;
@@ -334,7 +358,7 @@ h5 {
 	display: block;
 	color: #8C8C8C;
 	text-align: center;
-	padding-top: 1%;
+	padding-top: 3px;
 	text-decoration: none;
 }
 
@@ -345,4 +369,113 @@ h5 {
 .tab-bar h5 {
 	margin: 0;
 	padding: 0;
+	font-weight: 300;
+}
+
+h1 {
+	font-size: 18px;
+	font-weight: 400;
+	margin-top: 10px;
+}
+
+#back-button {
+	height: 23px;
+	display: block;
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+#profile-picture {
+	display: block;
+	padding: 32px;
+	text-align: center;
+}
+
+#dale {
+	width: 150px;
+}
+
+.text-field {
+	display: block;
+	height: 45px;
+	width: 92%;
+	text-align: center;
+	margin: auto;
+	border-top: .5px solid #C8C7CC;
+	border-bottom: .5px solid #C8C7CC;
+}
+
+.text-field label {
+	float: left;
+	font-size: 18px;
+	margin-top: 10px;
+	font-weight: 400;
+	margin-left: 5px;
+}
+
+.text-field input {
+	margin-right: 5px;
+	width: 80%;
+	float: right;
+	text-align: right;
+	font-size: 18px;
+	margin-top: 10px;
+	border: none;
+	color: #8C8C8C;
+	font-weight: 400;
+}
+
+.text-field.large {
+	height: 145px;
+}
+
+#edit {
+	height: 25px;
+	float: right;
+	margin-right: 5px;
+	margin-top: 10px;
+}
+
+.lifestyles {
+	position: relative;
+	width: 90%;
+	height: 93px;
+	text-align: center;
+	margin: auto;
+}
+
+.lifestyle-container {
+	position: relative;
+	float: left;
+	margin-top: 3%;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+.lifestyle-container h5 {
+	font-weight: 300;
+}
+
+.lifestyle-image {
+	height: 50px;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#search-icon {
+	height: 25px;
+	display: block;
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+#filter-icon {
+	height: 25px;
+	display: block;
+    float: left;
+    margin-top: 10px;
+    margin-left: 15px;
 }
