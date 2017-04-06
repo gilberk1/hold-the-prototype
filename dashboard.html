@@ -2,21 +2,29 @@
 <html>
 	<head>
 		<title>Hold the...</title>
-		<link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+		<link rel="icon" href="images/Plate.png">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
 		<link rel = "stylesheet" href="styles/style.css">
 		<link rel = "stylesheet" href="styles/animate.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src = "js/main.js"></script>
 	</head>
 	<body>
-		<div class = "header">
-			<img id = "status-bar" src = "images/Status Bar.png">
-			<div class = "top-bar">
-				<img id = "hold-the-word" src = "images/Hold the... Word.png">
-				<img id = "profile-icon" src = "images/Profile.png">
-			</div>
+		<div class="header">
+			<img id = "status-bar" src = "images/top/Status Bar.png">
+			<div class="top-bar">
+		  		<div class="top-container" style = "padding-top: 2px;"></div>
+		  		<div class="top-container">
+	        		<img id = "hold-the-word" src="images/top/Hold the... Word.png">
+		    	</div>
+			  	<a href="profile.html">
+			  		<div class="top-container">
+		        		<img id = "profile-icon" src="images/top/Profile.png">
+		    		</div>
+		    	</a>
+		    </div>
 		</div>
-		<div class = "content" style = "height: 590px;">
+		<div class = "content" style = "height: 575px;">
 			<div class = "welcome">
 				<h3>Hello Dale Lewis!</h3>
 				<h3>Let's create something tasty together!</h3>
@@ -48,19 +56,24 @@
 			</div>
 		</div>
 		<div class="tab-bar">
-		  <a href="dashboard.html"><div class="tab-container">
-	        	<img class = "tab-images" src="images/tab/Home - Green.png">
-	        	<h5 style = "color: #84ba4d;">Home</h5>
-	    	</div>
+		  	<a href="dashboard.html">
+		  		<div class="tab-container">
+	        		<img class = "tab-images" src="images/tab/Home - Green.png">
+		        	<h5 style = "color: #84ba4d;">Home</h5>
+	    		</div>
 	    	</a>
-		  <a href="recipes.html"><div class="tab-container">
-	        	<img class = "tab-images" src="images/tab/Utensils.png">
-	        	<h5>Recipes</h5>
-	    	</div></a>
-		  <a href="saved.html"><div class="tab-container">
-	        	<img class = "tab-images" src="images/tab/Heart.png">
-	        	<h5>Saved</h5>
-	    	</div></a>
+		  	<a href="recipes.html">
+		  		<div class="tab-container">
+	        		<img class = "tab-images" src="images/tab/Utensils.png">
+		        	<h5>Recipes</h5>
+		    	</div>
+		    </a>
+		  	<a href="saved.html">
+		  		<div class="tab-container">
+	        		<img class = "tab-images" src="images/tab/Heart.png">
+	        		<h5>Saved</h5>
+	    		</div>
+	    	</a>
 		</div>
 	</body>
 </html>
