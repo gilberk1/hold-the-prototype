@@ -46,10 +46,43 @@ function tomatoesFade() {
   	});
 }
 
-// function slideLeft() {
-//    $('body').addClass('slideLeftOut');
-// }
-
 $(document).ready(function() {
    baconFade();
+
+  const handle = $( "#serving-custom-handle" );
+  $("#serving-slider-range").slider({
+    range: true,
+    min: 2,
+    max: 30,
+    values: [ 2, 30 ],
+    slide: ( event, ui ) => {
+      $("#left-people").text(`${ui.values[0]} people`);
+      $("#right-people").text(`${ui.values[1]} people`);
+    }
+  });
+
+  // const handle = $( "#custom-handle" );
+  $("#prep-slider-range").slider({
+    range: true,
+    min: 0,
+    max: 60,
+    values: [ 0, 60 ],
+    slide: ( event, ui ) => {
+      $("#prep-left-mins").text(`${ui.values[0]} mins`);
+      $("#prep-right-mins").text(`${ui.values[1]} mins`);
+    }
+  });
+
+  // const handle = $( "#custom-handle" );
+  $("#cooking-slider-range").slider({
+    range: true,
+    min: 0,
+    max: 180,
+    values: [ 0, 180 ],
+    slide: ( event, ui ) => {
+      $("#cooking-left-mins").text(`${ui.values[0]} mins`);
+      $("#cooking-right-mins").text(`${ui.values[1]} mins`);
+    }
+  });
+
 });
