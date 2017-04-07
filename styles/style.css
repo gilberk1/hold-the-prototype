@@ -464,7 +464,8 @@ h1 {
 	margin-right: auto;
 }
 
-#search-icon {
+#search-icon,
+#check-green {
 	height: 25px;
 	display: block;
     float: right;
@@ -472,10 +473,54 @@ h1 {
     margin-right: 15px;
 }
 
-#filter-icon {
+#filter-icon,
+#cancel-green {
 	height: 25px;
 	display: block;
     float: left;
     margin-top: 10px;
     margin-left: 15px;
+}
+
+.category {
+	height: 40px;
+	border: .5px solid #8C8C8C;
+	background-color: #F9F9F9;
+}
+
+.category h1 {
+	width: 50%;
+	color: #8C8C8C;
+	margin-top: 8px;
+	margin-left: 24px;
+	padding: 0;
+	float: left;
+}
+
+.subtract {
+	height: 30px;
+	float: right;
+	margin-top: 5px;
+	margin-right: 6px;
+}
+
+.text-field h1 {
+	width: 50%;
+	text-align: left;
+	font-size: 18px;
+	margin-top: 8px;
+	font-weight: 400;
+	margin-left: 5px;
+	float: left;
+}
+
+.text-field img {
+	height: 10px;
+	margin-right: 16px;
+	float: right;
+	margin-top: 15px;
+}
+
+.range {
+	height: 70px;
 }
