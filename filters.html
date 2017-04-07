@@ -6,8 +6,10 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 		<link rel = "stylesheet" href="styles/style.css">
 		<link rel = "stylesheet" href="styles/animate.css">
+		<link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src = "js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+  		<script src = "js/main.js"></script>
 	</head>
 	<body>
 		<div class="header">
@@ -111,6 +113,14 @@
 					<img class = "subtract" src = "images/Sub.png">
 				</div>
 				<div class = "range">
+					<span class="slider">
+					  	<div id="left-people" class="slider-text" style = "text-align: right">2 people</div>
+					  	<div id="serving-slider-range">
+					    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -4px;"></div>
+					    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -22px;"></div>
+						</div>
+					  	<div id="right-people" class="slider-text" style = "text-align: left">30 people</div>
+					</span>
 				</div>
 			</div>
 			<div class = "prep-time">
@@ -119,6 +129,14 @@
 					<img class = "subtract" src = "images/Sub.png">
 				</div>
 				<div class = "range">
+					<span class="slider">
+					  	<div id="prep-left-mins" class="slider-text" style = "text-align: right">0 mins</div>
+					  	<div id="prep-slider-range">
+					    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -4px;"></div>
+					    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -22px;"></div>
+						</div>
+					  	<div id="prep-right-mins" class="slider-text" style = "text-align: left">60 mins</div>
+					</span>
 				</div>
 			</div>
 			<div class = "cooking-time">
@@ -127,6 +145,14 @@
 					<img class = "subtract" src = "images/Sub.png">
 				</div>
 				<div class = "range">
+					<span class="slider">
+					  	<div id="cooking-left-mins" class="slider-text" style = "text-align: right">0 mins</div>
+					  	<div id="cooking-slider-range">
+					    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -4px;"></div>
+					    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -22px;"></div>
+						</div>
+					  	<div id="cooking-right-mins" class="slider-text" style = "text-align: left">180 mins</div>
+					</span>
 				</div>
 			</div>
 		</div>
