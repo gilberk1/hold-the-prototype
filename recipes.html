@@ -6,79 +6,230 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 		<link rel = "stylesheet" href="styles/style.css">
 		<link rel = "stylesheet" href="styles/animate.css">
+		<link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src = "js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+		<script src="js/google.fastbutton.js"></script>
+ 		<script src="js/jquery.google.fastbutton.js"></script>
+ 		<script src="http://ricostacruz.com/jquery.transit/jquery.transit.min.js" type="text/javascript"></script>
+ 		<script src = "js/main.js"></script>
 	</head>
-	<body>
-		<div class="header">
-			<img id = "status-bar" src = "images/top/Status Bar.png">
-			<div class="top-bar">
-		  		<a href = "filters.html">
+	<body onLoad = "transitions(); sliders();">
+		<div id = "recipes" class = "sc selected">
+			<div class="header">
+				<img id = "status-bar" src = "images/top/Status Bar.png">
+				<div class="top-bar">
 			  		<div class="top-container">
-			  			<img id = "filter-icon" src="images/Filter.png">
+			  			<img id = "filter-icon"  class = "link slideright" page-load = "filters" src="images/Filter.png">
 			  		</div>
-			  	</a>
-		  		<div class="top-container">
-	        		<h1>Recipes</h1>
-		    	</div>
-		  		<div class="top-container">
-	        		<img id = "search-icon" src="images/Search.png">
-	    		</div>
-		    </div>
+			  		<div class="top-container">
+		        		<h1>Recipes</h1>
+			    	</div>
+			  		<div class="top-container">
+		        		<img id = "search-icon" src="images/Search.png">
+		    		</div>
+			    </div>
+			</div>
+			<div class = "content" style = "height: 620px;">
+				<div class = "recipes">
+					<div class="recipe-container">
+			        	<img class = "recipe-image" src="images/recipes/Avocado Carbonara.png">
+			        	<img class = "heart-outline" src = "images/Outline Heart.png">
+			       		<h5>Avocado Carbonara</h5>
+			    	</div>
+			    	<div class="recipe-container">
+			        	<img class = "recipe-image" src="images/recipes/Carnitas Tacos.png">
+			        	<img class = "heart-outline" src = "images/Filled Heart.png">
+			       		<h5>Carnitas Tacos</h5>
+			    	</div>
+			    	<div class="recipe-container">
+			        	<img class = "recipe-image" src="images/recipes/Swedish Meatballs.png">
+			        	<img class = "heart-outline" src = "images/Filled Heart.png">
+			       		<h5>Swedish Meatballs</h5>
+			    	</div>
+			    	<div class="recipe-container">
+			        	<img class = "recipe-image" src="images/recipes/Mac and Cheese.png">
+			        	<img class = "heart-outline" src = "images/Outline Heart.png">
+			       		<h5>Mac and Cheese</h5>
+			    	</div>
+			    	<div class="recipe-container">
+			        	<img class = "recipe-image" src="images/recipes/Fettuccine Alfredo.png">
+			        	<img class = "heart-outline" src = "images/Outline Heart.png">
+			       		<h5>Fettuccine Alfredo</h5>
+			    	</div>
+			    	<div class="recipe-container">
+			        	<img class = "recipe-image" src="images/recipes/Teriyaki Tofu.png">
+			        	<img class = "heart-outline" src = "images/Filled Heart.png">
+			       		<h5>Teriyaki Tofu</h5>
+			    	</div>
+			    </div>
+			</div>
 		</div>
-		<div class = "content" style = "height: 620px;">
-			<div class = "recipes">
-				<div class="recipe-container">
-		        	<img class = "recipe-image" src="images/recipes/Avocado Carbonara.png">
-		        	<img class = "heart-outline" src = "images/Outline Heart.png">
-		       		<h5>Avocado Carbonara</h5>
-		    	</div>
-		    	<div class="recipe-container">
-		        	<img class = "recipe-image" src="images/recipes/Carnitas Tacos.png">
-		        	<img class = "heart-outline" src = "images/Filled Heart.png">
-		       		<h5>Carnitas Tacos</h5>
-		    	</div>
-		    	<div class="recipe-container">
-		        	<img class = "recipe-image" src="images/recipes/Swedish Meatballs.png">
-		        	<img class = "heart-outline" src = "images/Filled Heart.png">
-		       		<h5>Swedish Meatballs</h5>
-		    	</div>
-		    	<div class="recipe-container">
-		        	<img class = "recipe-image" src="images/recipes/Mac and Cheese.png">
-		        	<img class = "heart-outline" src = "images/Outline Heart.png">
-		       		<h5>Mac and Cheese</h5>
-		    	</div>
-		    	<div class="recipe-container">
-		        	<img class = "recipe-image" src="images/recipes/Fettuccine Alfredo.png">
-		        	<img class = "heart-outline" src = "images/Outline Heart.png">
-		       		<h5>Fettuccine Alfredo</h5>
-		    	</div>
-		    	<div class="recipe-container">
-		        	<img class = "recipe-image" src="images/recipes/Teriyaki Tofu.png">
-		        	<img class = "heart-outline" src = "images/Filled Heart.png">
-		       		<h5>Teriyaki Tofu</h5>
-		    	</div>
-		    </div>
+		<div id = "filters" class = "sc">
+			<div class="header">
+				<img id = "status-bar" src = "images/top/Status Bar.png">
+				<div class="top-bar">
+			  		<a class="back link slideleft" page-load="recipes">
+			  			<div class="top-container">
+			  				<img id = "cancel-green" src="images/Cancel - Green.png">
+			  			</div>
+			  		</a>
+			  		<div class="top-container">
+		        		<h1>Filters</h1>
+			    	</div>
+			  		<a class="back link slideleft" page-load="recipes">
+						<div class="top-container">
+		        			<img id = "check-green" src="images/Check - Green.png">
+		    			</div>
+		    		</a>
+			    </div>
+			</div>
+			<div class = "content" style = "height: 1155px;">
+				<div class = "cuisine">
+					<div class = "category">
+						<h1>CUISINE</h1>
+						<img class = "subtract" src = "images/Sub.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px; border-top: .5px solid #8C8C8C;">
+						<h1>American</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>BBQ</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Chinese</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Indian</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Japanese</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Korean</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Mexican</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px; margin-bottom: -1px">
+						<h1>Thai</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+				</div>
+				<div class = "meal-type">
+					<div class = "category">
+						<h1>MEAL TYPE</h1>
+						<img class = "subtract" src = "images/Sub.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px; border-top: .5px solid #8C8C8C;">
+						<h1>Appetizers</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Breakfast</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Desserts</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Dinner</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Lunch</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Salads</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px">
+						<h1>Sides</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+					<div class = "text-field" style = "margin-top: -1px; margin-bottom: -1px">
+						<h1>Snacks</h1>
+						<img class = "filter-check" src = "images/Check - Green.png">
+					</div>
+				</div>
+				<div class = "serving">
+					<div class = "category">
+						<h1>SERVING</h1>
+						<img class = "subtract" src = "images/Sub.png">
+					</div>
+					<div class = "range">
+						<span class="slider">
+						  	<div id="left-people" class="slider-text" style = "text-align: right">2 people</div>
+						  	<div id="serving-slider-range">
+						    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -4px;"></div>
+						    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -22px;"></div>
+							</div>
+						  	<div id="right-people" class="slider-text" style = "text-align: left">30 people</div>
+						</span>
+					</div>
+				</div>
+				<div class = "prep-time">
+					<div class = "category">
+						<h1>PREP TIME</h1>
+						<img class = "subtract" src = "images/Sub.png">
+					</div>
+					<div class = "range">
+						<span class="slider">
+						  	<div id="prep-left-mins" class="slider-text" style = "text-align: right">0 mins</div>
+						  	<div id="prep-slider-range">
+						    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -4px;"></div>
+						    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -22px;"></div>
+							</div>
+						  	<div id="prep-right-mins" class="slider-text" style = "text-align: left">60 mins</div>
+						</span>
+					</div>
+				</div>
+				<div class = "cooking-time">
+					<div class = "category">
+						<h1>COOKING TIME</h1>
+						<img class = "subtract" src = "images/Sub.png">
+					</div>
+					<div class = "range">
+						<span class="slider">
+						  	<div id="cooking-left-mins" class="slider-text" style = "text-align: right">0 mins</div>
+						  	<div id="cooking-slider-range">
+						    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -4px;"></div>
+						    	<div id = "custom-handle" class="ui-slider-handle custom-handle" style = "margin-top: -22px;"></div>
+							</div>
+						  	<div id="cooking-right-mins" class="slider-text" style = "text-align: left">180 mins</div>
+						</span>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="tab-bar">
-		  	<a href="dashboard.html">
-		  		<div class="tab-container">
-	        		<img class = "tab-images" src="images/tab/Home.png">
-		        	<h5>Home</h5>
-	    		</div>
-	    	</a>
-		  	<a href="recipes.html">
-		  		<div class="tab-container">
-	        		<img class = "tab-images" src="images/tab/Utensils - Green.png">
-		        	<h5 style = "color: #84ba4d;">Recipes</h5>
-		    	</div>
-		    </a>
-		  	<a href="saved.html">
-		  		<div class="tab-container">
-	        		<img class = "tab-images" src="images/tab/Heart.png">
-	        		<h5>Saved</h5>
-	    		</div>
-	    	</a>
-		</div>
+			  	<a href="dashboard.html">
+			  		<div class="tab-container">
+		        		<img class = "tab-images" src="images/tab/Home.png">
+			        	<h5>Home</h5>
+		    		</div>
+		    	</a>
+			  	<a href="recipes.html">
+			  		<div class="tab-container">
+		        		<img class = "tab-images" src="images/tab/Utensils - Green.png">
+			        	<h5 style = "color: #84ba4d;">Recipes</h5>
+			    	</div>
+			    </a>
+			  	<a href="saved.html">
+			  		<div class="tab-container">
+		        		<img class = "tab-images" src="images/tab/Heart.png">
+		        		<h5>Saved</h5>
+		    		</div>
+		    	</a>
+			</div>
 	</body>
 </html>
