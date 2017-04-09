@@ -46,6 +46,26 @@ function tomatoesFade() {
   	});
 }
 
+function editLifestyles() {
+  $("#edit").click(function() {
+    $("#lifestyles").slideUp();
+    $('#edit').fadeOut(500);
+    setTimeout("$('#edit').css('display', 'none');", 200);
+    $('#lifestyles-box').animate({height: '47px'});   
+    $("#lifestyles-edit").slideDown();
+    $('.content.profile').animate({height: '780px'});   
+  });
+
+  $(".submit.green").click(function() {
+    $("#lifestyles").slideDown();
+    $('#edit').fadeIn(500);
+    setTimeout("$('#edit').css('display', 'block');", 200);
+    $('#lifestyles-box').animate({height: '145px'});
+    $("#lifestyles-edit").slideUp();
+    $('.content.profile').animate({height: '460px'});   
+  });
+}
+
 function sliders() {
   const handle = $("#custom-handle");
   
