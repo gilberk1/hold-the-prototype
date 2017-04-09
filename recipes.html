@@ -5,7 +5,7 @@
 		<link rel="icon" href="images/Plate.png">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 		<link rel = "stylesheet" href="styles/style.css">
-		<link rel = "stylesheet" href="styles/animate.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
@@ -14,7 +14,7 @@
  		<script src="https://ricostacruz.com/jquery.transit/jquery.transit.min.js" type="text/javascript"></script>
  		<script src = "js/main.js"></script>
 	</head>
-	<body onLoad = "transitions(); sliders();">
+	<body onLoad = "transitions(); search(); changeHearts(); sliders();">
 		<div id = "recipes" class = "sc selected">
 			<div class="header">
 				<img id = "status-bar" src = "images/top/Status Bar.png">
@@ -26,12 +26,19 @@
 		        		<h1>Recipes</h1>
 			    	</div>
 			  		<div class="top-container">
-		        		<img id = "search-icon" src="images/Search.png">
+			  			<img id = "cancel-green" class = "searching" src="images/Cancel - Green.png">
+		        		<img id = "search-icon" class = "not-searching"  src="images/Search.png">
 		    		</div>
 			    </div>
 			</div>
 			<div class = "content recipes-list">
 				<div class = "recipes">
+					<div class = "search">
+						<div class="input-container">
+							<img id = "search-icon" class = "small" src = "images/Search.png">
+						  	<input type = "text" name = "search" placeholder = "Search">
+						</div>
+					</div>
 					<div class="recipe-container">
 			        	<img class = "recipe-image" src="images/recipes/Avocado Carbonara.png">
 			        	<img class = "heart-outline" src = "images/Outline Heart.png">

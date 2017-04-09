@@ -401,7 +401,8 @@ h5 {
 	color: #84ba4d;
 }
 
-.heart-outline {
+.heart-outline,
+.heart-filled {
 	position: absolute;
 	top: 5%;
 	left: 8%;
@@ -582,7 +583,6 @@ h1 {
 #search-icon,
 #check-green {
 	height: 25px;
-	display: block;
     float: right;
     margin-top: 10px;
     margin-right: 15px;
@@ -591,7 +591,6 @@ h1 {
 #filter-icon,
 #cancel-green {
 	height: 25px;
-	display: block;
     float: left;
     margin-top: 10px;
     margin-left: 15px;
@@ -704,4 +703,65 @@ h1 {
 	color: #84ba4d;
 	width: 52%;
 	margin-top: 20px;
+}
+
+.searching {
+	display: none;
+	margin-left: 0px !important;
+	margin-right: 15px;
+	float: right !important;
+}
+
+.not-searching {
+	display: block;
+}
+
+.search {
+	display: none;
+}
+
+.small { 
+  	position: absolute;
+  	top: 0px;
+  	left: 13px;
+}
+
+.heart-outline {
+	content: url('../images/Outline Heart.png');
+}
+
+.heart-filled {
+	content: url('../images/Filled Heart.png');
+}
+
+.gluten-free-unselected {
+	content: url('../images/lifestyles/gluten free unselected.png');
+}
+
+.gluten-free-selected {
+	content: url('../images/lifestyles/gluten free.png');
+}
+
+.vegetarian-unselected {
+	content: url('../images/lifestyles/vegetarian unselected.png');
+}
+
+.vegetarian-selected {
+	content: url('../images/lifestyles/vegetarian.png');
+}
+
+.dairy-free-unselected {
+	content: url('../images/lifestyles/dairy free unselected.png');
+}
+
+.dairy-free-selected {
+	content: url('../images/lifestyles/dairy free.png');
+}
+
+.none-unselected {
+	content: url('../images/lifestyles/none unselected.png');
+}
+
+.none-selected {
+	content: url('../images/lifestyles/none.png');
 }

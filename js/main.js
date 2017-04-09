@@ -46,6 +46,13 @@ function tomatoesFade() {
   	});
 }
 
+function changeHearts() {
+  $(".heart-outline").click(function() {
+    $(this).toggleClass('heart-outline');
+    $(this).toggleClass('heart-filled animated pulse');
+  });
+}
+
 function editLifestyles() {
   $("#edit").click(function() {
     $("#lifestyles").slideUp();
@@ -63,6 +70,44 @@ function editLifestyles() {
     $('#lifestyles-box').animate({height: '145px'});
     $("#lifestyles-edit").slideUp();
     $('.content.profile').animate({height: '460px'});   
+  });
+}
+
+function selectLifestyles() {
+  $(".gluten-free-unselected").click(function() {
+    $(this).toggleClass('gluten-free-unselected');
+    $(this).toggleClass('gluten-free-selected animated pulse');
+  });
+
+  $(".vegetarian-selected").click(function() {
+    $(this).toggleClass('vegetarian-unselected');
+    $(this).toggleClass('vegetarian-selected animated pulse');
+  });
+
+  $(".dairy-free-selected").click(function() {
+    $(this).toggleClass('dairy-free-unselected');
+    $(this).toggleClass('dairy-free-selected animated pulse');
+  });
+
+  $(".none-selected").click(function() {
+    $(this).toggleClass('none-unselected');
+    $(this).toggleClass('none-selected animated pulse');
+  });
+}
+
+function search() {
+  $(".not-searching").click(function() {
+    $('.searching').css('display', 'block');
+    $('.not-searching').css('display', 'none');
+    $(".search").slideDown();
+    $('.content.recipes-list').animate({height: '700px'});   
+  });
+
+  $(".searching").click(function() {
+    $('.searching').css('display', 'none');
+    $('.not-searching').css('display', 'block');
+    $(".search").slideUp();
+    $('.content.recipes-list').animate({height: '650px'});   
   });
 }
 
