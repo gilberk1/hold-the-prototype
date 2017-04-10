@@ -111,6 +111,75 @@ function search() {
   });
 }
 
+function colexp() {
+  $(".category").click(function() {
+    if($(this).hasClass('exp') && $(this).parent().find('.category-elements').length) {
+      var category_height = $(this).parent().find('.category-elements').height();
+      var content_height = $(this).parent().parent().height();
+      var adjusted_height = content_height - 368;
+
+      $(this).find('.subtract').removeClass('sub');
+      $(this).find('.subtract').addClass('add');  
+
+      $(this).parent().find('.category-elements').slideUp();     
+      $(this).parent().parent().animate({height: adjusted_height});
+
+      $(this).removeClass('exp');
+      $(this).addClass('col');
+    }
+    else if($(this).hasClass('col') && $(this).parent().find('.category-elements').length) {
+      $(this).find('.subtract').removeClass('add');
+      $(this).find('.subtract').addClass('sub');  
+
+      $(this).parent().find('.category-elements').slideDown();
+
+      var content_height = $(this).parent().parent().height();
+      var adjusted_height = content_height + 368;     
+
+      $(this).parent().parent().animate({height: adjusted_height});
+
+      $(this).removeClass('col');
+      $(this).addClass('exp');
+    }
+    else if($(this).hasClass('exp') && $(this).parent().find('.range').length) {
+      var category_height = $(this).parent().find('.range').height();
+      var content_height = $(this).parent().parent().height();
+      var adjusted_height = content_height - category_height;
+
+      $(this).find('.subtract').removeClass('sub');
+      $(this).find('.subtract').addClass('add');  
+
+      $(this).parent().find('.range').slideUp();     
+      $(this).parent().parent().animate({height: adjusted_height});
+
+      $(this).removeClass('exp');
+      $(this).addClass('col');
+    }
+    else if($(this).hasClass('col') && $(this).parent().find('.range')) {
+      $(this).find('.subtract').removeClass('add');
+      $(this).find('.subtract').addClass('sub');  
+
+      $(this).parent().find('.range').slideDown();
+
+      var content_height = $(this).parent().parent().height();
+      var adjusted_height = content_height + 70;     
+
+      $(this).parent().parent().animate({height: adjusted_height});
+
+      $(this).removeClass('col');
+      $(this).addClass('exp');
+    }
+  });
+
+}
+
+function uncheck() {
+  $(".text-field").click(function() {
+    $(this).find('.filter-check').toggleClass('checked');
+    $(this).find('.filter-check').toggleClass('unchecked');
+  });
+}
+
 function sliders() {
   const handle = $("#custom-handle");
   
@@ -218,3 +287,12 @@ function transitions() {
     }
   });
 }
+
+$(document).ready(function() {
+  transitions();
+  changeHearts();
+  selectLifestyles();
+  editLifestyles();
+  search();
+  uncheck();
+});

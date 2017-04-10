@@ -85,66 +85,61 @@ body {
 #hold-the-logo {
 	position:relative;
 }
-
-#bacon {
+#bacon,
+#bread,
+#cheese,
+#egg,
+#milk,
+#peanuts,
+#pepper,
+#tomatoes {
 	display: none;
 	position: absolute;
+}
+
+#bacon {
 	top: 18%;
 	left: 56%;
 	width: 21.33%;
 }
 
 #bread {
-	display: none;
-	position: absolute;
 	top: 28%;
 	left: 54%;
 	width: 24%;
 }
 
 #cheese {
-	display: none;
-	position: absolute;
 	top: 25%;
 	left: 55.46%;
 	width: 21.33%;
 }
 
 #egg {
-	display: none;
-	position: absolute;
 	top: 24%;
 	left: 53%;
 	width: 25.33%;
 }
 
 #milk {
-	display: none;
-	position: absolute;
 	top: 16%;
 	left: 60%;
 	width: 12%;
 }
 
 #peanuts {
-	display: none;
-	position: absolute;
 	top: 30%;
 	left: 52.8%;
 	width: 25.33%;
 }
 
 #pepper {
-	display: none;
-	position: absolute;
 	top: 22%;
 	left: 55%;
 	width: 20%;
 }
 
 #tomatoes {
-	display: none;
-	position: absolute;
 	top: 23%;
 	left: 52.8%;
 	width: 25.33%;
@@ -603,12 +598,17 @@ h1 {
 }
 
 .category h1 {
+	position: absolute;
 	width: 50%;
 	color: #8C8C8C;
 	margin-top: 8px;
 	margin-left: 24px;
 	padding: 0;
 	float: left;
+}
+
+.category-elements {
+	height: 368px;
 }
 
 .subtract {
@@ -712,11 +712,15 @@ h1 {
 	float: right !important;
 }
 
-.not-searching {
+.not-searching,
+.checked,
+.expanded {
 	display: block;
 }
 
-.search {
+.search,
+.unchecked,
+.collapsed {
 	display: none;
 }
 
@@ -764,4 +768,13 @@ h1 {
 
 .none-selected {
 	content: url('../images/lifestyles/none.png');
+}
+
+.sub {
+	content: url('../images/Sub.png');
+}
+
+
+.add {
+	content: url('../images/Add.png');
 }
