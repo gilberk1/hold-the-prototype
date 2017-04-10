@@ -14,7 +14,7 @@
  		<script src="https://ricostacruz.com/jquery.transit/jquery.transit.min.js" type="text/javascript"></script>
  		<script src = "js/main.js"></script>
 	</head>
-	<body onLoad = "transitions(); search(); changeHearts(); sliders();">
+	<body onLoad = "colexp(); sliders();">
 		<div id = "recipes" class = "sc selected">
 			<div class="header">
 				<img id = "status-bar" src = "images/top/Status Bar.png">
@@ -93,83 +93,87 @@
 			</div>
 			<div class = "content filters">
 				<div class = "cuisine">
-					<div class = "category">
+					<div class = "category exp">
 						<h1>CUISINE</h1>
-						<img class = "subtract" src = "images/Sub.png">
+						<img class = "subtract sub" src = "images/Sub.png">
 					</div>
-					<div class = "text-field header-conflict overlap">
-						<h1>American</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>BBQ</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Chinese</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Indian</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Japanese</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Korean</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Mexican</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap bottom-overlap">
-						<h1>Thai</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
+					<div class = "category-elements">
+						<div class = "text-field header-conflict overlap">
+							<h1>American</h1>
+							<img class = "filter-check checked checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>BBQ</h1>
+							<img class = "filter-check checked checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Chinese</h1>
+							<img class = "filter-check checked checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Indian</h1>
+							<img class = "filter-check checked checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Japanese</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Korean</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Mexican</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap bottom-overlap">
+							<h1>Thai</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
 					</div>
 				</div>
 				<div class = "meal-type">
-					<div class = "category">
+					<div class = "category exp">
 						<h1>MEAL TYPE</h1>
 						<img class = "subtract" src = "images/Sub.png">
 					</div>
-					<div class = "text-field header-conflict overlap">
-						<h1>Appetizers</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Breakfast</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Desserts</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Dinner</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Lunch</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Salads</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field overlap">
-						<h1>Sides</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
-					</div>
-					<div class = "text-field bottom-overlap overlap">
-						<h1>Snacks</h1>
-						<img class = "filter-check" src = "images/Check - Green.png">
+					<div class = "category-elements">
+						<div class = "text-field header-conflict overlap">
+							<h1>Appetizers</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Breakfast</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Desserts</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Dinner</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Lunch</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Salads</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field overlap">
+							<h1>Sides</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
+						<div class = "text-field bottom-overlap overlap">
+							<h1>Snacks</h1>
+							<img class = "filter-check checked" src = "images/Check - Green.png">
+						</div>
 					</div>
 				</div>
 				<div class = "serving">
-					<div class = "category">
+					<div class = "category exp">
 						<h1>SERVING</h1>
 						<img class = "subtract" src = "images/Sub.png">
 					</div>
@@ -185,7 +189,7 @@
 					</div>
 				</div>
 				<div class = "prep-time">
-					<div class = "category">
+					<div class = "category exp">
 						<h1>PREP TIME</h1>
 						<img class = "subtract" src = "images/Sub.png">
 					</div>
@@ -201,7 +205,7 @@
 					</div>
 				</div>
 				<div class = "cooking-time">
-					<div class = "category">
+					<div class = "category exp">
 						<h1>COOKING TIME</h1>
 						<img class = "subtract" src = "images/Sub.png">
 					</div>
