@@ -295,4 +295,5 @@ $(document).ready(function() {
   editLifestyles();
   search();
   uncheck();
+  colexp(); 
 });

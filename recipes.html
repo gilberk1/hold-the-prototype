@@ -3,7 +3,7 @@
 	<head>
 		<title>Hold the...</title>
 		<link rel="icon" href="images/Plate.png">
-		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400" rel="stylesheet">
 		<link rel = "stylesheet" href="styles/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
@@ -14,7 +14,7 @@
  		<script src="https://ricostacruz.com/jquery.transit/jquery.transit.min.js" type="text/javascript"></script>
  		<script src = "js/main.js"></script>
 	</head>
-	<body onLoad = "colexp(); sliders();">
+	<body onLoad = "sliders();">
 		<div id = "recipes" class = "sc selected">
 			<div class="header">
 				<img id = "status-bar" src = "images/top/Status Bar.png">
@@ -39,7 +39,7 @@
 						  	<input type = "text" name = "search" placeholder = "Search">
 						</div>
 					</div>
-					<div class="recipe-container">
+					<div class="recipe-container link slideleft" page-load = "chosen-recipe" >
 			        	<img class = "recipe-image" src="images/recipes/Avocado Carbonara.png">
 			        	<img class = "heart-outline" src = "images/Outline Heart.png">
 			       		<h5>Avocado Carbonara</h5>
@@ -219,6 +219,124 @@
 						  	<div id="cooking-right-mins" class="slider-text left-text-align">180 mins</div>
 						</span>
 					</div>
+				</div>
+			</div>
+		</div>
+		<div id = "chosen-recipe" class = "sc">
+			<div class="header">
+				<img id = "status-bar" src = "images/top/Status Bar.png">
+				<div class="top-bar top-border">
+			  		<a class="back link slideleft" page-load="recipes">
+			  			<div class="top-container green-background breadcrumbs">
+			  				<div class = "white-overlay">
+				  				<h1>Recipes</h1>
+				  			</div>
+			  			</div>
+			  			<div class="top-container arrow">
+				  			<div id = "green-triangle">
+				  			</div>
+				  			<div id = "white-triangle">
+				  			</div>
+			  			</div>
+			  		</a>
+			  		<div class="top-container sub-breadcrumbs">
+		        		<h1>Substitutions</h1>
+		    		</div>
+			  		<div class="top-container breadcrumbs">
+		    		</div>
+			    </div>
+			</div>
+			<div class = "content chosen-recipe">
+				<div class = "question">
+					<img src = "images/Question Mark.png">
+				</div>
+				<div class = "recipe-info">
+					<h6>Avocado Carbonara</h6>
+					<div class = "recipe-photo">
+						<img src = "images/recipes/Avocado Carbonara.png">
+					</div>
+					<div class = "info-container">
+						<div class = "people-serving">
+							<h5>Serves 2 people</h5>
+							<img id = "edit-people" src = "images/Edit.png">
+						</div>
+						<div class = "prep">
+							<img id = "prep-image" src = "images/Prep.png">
+							<h5>15 mins</h5>
+						</div>
+						<div class = "cooking">
+							<img id = "cooking-image" src = "images/Pot.png">
+							<h5>35 mins</h5>
+						</div>
+					</div>
+				</div>
+				<div class = "recipe-modifications">
+					<div class = "title">
+						<h5>Modified for the following lifestyle</h5>
+						<img id = "edit-modifications" src = "images/Edit.png">
+					</div>
+					<div id = "lifestyles" class = "lifestyles modify">
+						<div class="lifestyle-container modify">
+				        	<img class = "lifestyle-image modify" src="images/lifestyles/vegetarian.png">
+				       		<h5>Vegetarian</h5>
+				    	</div>
+				    	<div class="lifestyle-container modify">
+				        	<img class = "lifestyle-image modify" src="images/lifestyles/dairy free.png">
+				       		<h5>Dairy-Free</h5>
+				    	</div>
+				    	<div class="lifestyle-container modify">
+				        	<img class = "lifestyle-image modify" src="images/lifestyles/none.png">
+				       		<h5>Tomatoes</h5>
+				    	</div>
+				    	<div class="lifestyle-container modify">
+				        	<img class = "lifestyle-image modify" src="images/lifestyles/none.png">
+				       		<h5>Peppers</h5>
+				    	</div>
+					</div>
+				</div>
+				<div class = "ingredients">
+					<div class = "category exp">
+						<h1>INGREDIENTS</h1>
+						<img class = "subtract sub" src = "images/Sub.png">
+					</div>
+					<div class = "category-elements">
+						<ul class = "ingredients-list">
+						  	<li>1 avocado</li>
+						  	<li>1 egg yolk</li>
+						  	<div class = "conflicts">
+							  	<li>1/2 cup heavy cream</li>
+						  		<img class = "exclamation" src = "images/Exclamation.png">
+						  	</div>
+						  	<li>1 clove garlic</li>
+						  	<li>1/2 lemon, juiced</li>
+						  	<div class = "conflicts">
+						  		<li>1/2 cup parmesan cheese, grated</li>
+						  		<img class = "exclamation" src = "images/Exclamation.png">
+						  	</div>
+						  	<div class = "conflicts">
+						  		<li>3 pieces bacon</li>
+						  		<img class = "exclamation" src = "images/Exclamation.png">
+						  	</div>
+						  	<li>1/2 pound spaghetti </li>
+						  	<li>1 tablespoon olive oil</li>
+						</ul>  
+					</div>
+				</div>
+				<div class = "instructions">
+					<div class = "category exp">
+						<h1>INSTRUCTIONS</h1>
+						<img class = "subtract" src = "images/Sub.png">
+					</div>
+					<div class = "category-elements">
+						<ul class = "instructions-list">
+						  	<li>Blend avocado, egg yolk, garlic, and lemon juice in a powerful blender or food processor. Pulse to blend and add heavy cream gradually. Blend the sauce until smooth and set aside.</li>
+						  	<li>Cut up strips of bacon and cook in a large pan. Set aside.</li>
+						  	<li>In a large pot, bring water to a boil and cook the spaghetti. Drain and coat with olive oil. Add sauce, bacon, parmesan, and salt/pepper, stirring until well combine. Enjoy!</li>
+						</ul> 
+					</div>
+				</div>
+				<div class = " finalize-button">
+					<button class = "submit green" type = "submit">FINALIZE</button>
 				</div>
 			</div>
 		</div>
