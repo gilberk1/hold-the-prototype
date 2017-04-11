@@ -438,6 +438,7 @@ h5 {
 }
 
 h1 {
+	display: inline-block;
 	font-size: 18px;
 	font-weight: 400;
 	margin-top: 10px;
@@ -701,7 +702,6 @@ h1 {
 	border: solid 1px #84ba4d;
 	font-size: 18px;
 	color: #84ba4d;
-	width: 52%;
 	margin-top: 20px;
 }
 
@@ -777,4 +777,224 @@ h1 {
 
 .add {
 	content: url('../images/Add.png');
+}
+
+#green-triangle {
+	position: absolute;
+	display: inline-block;
+	margin-left: -3%;
+	border-left: solid 22px #84ba4d;
+ 	border-bottom: solid 22px #FFFFFF;
+  	border-top: solid 22px #FFFFFF;
+}
+
+#white-triangle {
+	position: absolute;
+	display: inline-block;
+	margin-left: -3%;
+	border-left: solid 22px rgba(255, 255, 255, 0.5);
+ 	border-bottom: solid 22px #FFFFFF;
+  	border-top: solid 22px #FFFFFF;
+}
+
+.top-border {
+	border-top: 1px solid rgba(140, 140, 140, 0.7);
+}
+
+.breadcrumbs {
+	width: 25%;
+}
+
+.arrow {
+	width: 6%;
+}
+
+.sub-breadcrumbs {
+	width: 43%;
+}
+
+.recipe-breadcrumbs {
+	width: 25%;
+	border-right: #8C8C8C;
+}
+
+.white-overlay {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.question {
+	float: right;
+	margin-right: 5px;
+	margin-top: 6px;
+}
+
+.question img {
+	width: 30px;
+}
+
+h6 {
+	font-weight: 300;
+	font-size: 20px;
+	text-align: center;
+	margin: auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-left: 35px;
+}
+
+.recipe-info {
+	height: 170px;
+	border-bottom: 1px solid #8C8C8C;
+}
+
+.recipe-photo {
+	display: block;
+	width: 45%;
+	float: left;
+	text-align: right;
+}
+
+.info-container {
+	display: block;
+	float: left;
+	width: 55%;
+	position: relative;
+}
+
+.info-container h5 {
+	text-align: left;
+}
+
+.recipe-photo img {
+	width: 100px;
+	text-align: right;
+}
+
+#edit-people,
+#edit-modifications {
+	height: 20px;
+}
+
+#prep-image {
+	width: 23px;
+}
+
+#cooking-image {
+	width: 36px;
+}
+
+.people-serving {
+	padding-left: 25px;
+	margin-bottom: 35px;
+}
+
+.cooking {
+	padding-left: 18px;
+}
+
+.prep {
+	padding-left: 25px;
+	margin-bottom: 70px;
+}
+
+.prep img,
+.cooking img {
+	float: left;
+}
+
+.people-serving h5 {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	float: left;
+}
+
+
+.cooking h5 {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	margin-left: 10px;
+	float: left;
+}
+
+.prep h5 {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	margin-left: 10px;
+	float: left;
+}
+
+.people-serving img {
+	float: left;
+	margin-top: 4px;
+	margin-left: 10px;
+}
+
+.recipe-modifications {
+	height: 110px;
+}
+
+.title {
+	display: table;
+	text-align: center;
+	margin:auto;
+}
+
+.title h5 {
+	float: left;
+	font-style: italic
+}
+
+.title img {
+	float: left;
+	margin-top: 8px;
+	margin-left: 10px;
+}
+
+.lifestyles.modify {
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+.lifestyle-image.modify {
+	height: 30px;
+}
+
+.lifestyle-container.modify h5 {
+	margin: 0;
+	padding: 0;
+}
+
+.ingredients {
+	height: 425px;
+}
+
+.instructions {
+	height: 370px;
+}
+
+.ingredients-list,
+.instructions-list {
+	padding-right: 40px;
+
+}
+
+.ingredients-list li,
+.instructions-list li {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.finalize-button {
+	display: block;
+	text-align: center;
+	margin: auto;
+}
+
+.conflicts li,
+.conflicts img {
+	float: left;
+}
+
+.exclamation {
+	height: 30px;
 }
