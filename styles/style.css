@@ -1,4 +1,4 @@
-html {
+{
 	height: 100%;
 }
 body {
@@ -310,22 +310,8 @@ h4 {
 .content {
 	margin-top: 64px;
 	margin-bottom: 50px;
-}
-
-.content.dashboard {
-	height: 585px;
-}
-
-.content.profile {
-	height: 460px;
-}
-
-.content.recipes-list {
-	height: 650px;
-}
-
-.content.filters {
-	height: 1155px;
+	overflow-y: scroll;
+	max-height: calc(100% - 114px);
 }
 
 .welcome {
@@ -593,6 +579,7 @@ h1 {
 }
 
 .category {
+	position: relative;
 	height: 40px;
 	border: .5px solid #8C8C8C;
 	background-color: #F9F9F9;
@@ -607,10 +594,10 @@ h1 {
 	padding: 0;
 	float: left;
 }
-
+/*
 .category-elements {
 	height: 368px;
-}
+}*/
 
 .subtract {
 	height: 30px;
@@ -964,37 +951,36 @@ h6 {
 	padding: 0;
 }
 
-.ingredients {
-	height: 425px;
-}
-
-.instructions {
-	height: 370px;
-}
-
-.ingredients-list,
 .instructions-list {
-	padding-right: 40px;
-
+	padding-right: 30px;
+	margin-bottom: -20px;
 }
 
 .ingredients-list li,
 .instructions-list li {
 	font-size: 16px;
 	margin-bottom: 20px;
+	text-align: left;
 }
 
 .finalize-button {
 	display: block;
 	text-align: center;
-	margin: auto;
+	margin: auto;}
+
+.conflicts {
+	width: 100%;
+	height: 42px;
 }
 
 .conflicts li,
 .conflicts img {
+	text-align: left;
 	float: left;
 }
 
 .exclamation {
 	height: 30px;
+	margin-left: 3%;
+	margin-top: -5px;
 }

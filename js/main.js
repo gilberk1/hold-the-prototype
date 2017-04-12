@@ -60,7 +60,6 @@ function editLifestyles() {
     setTimeout("$('#edit').css('display', 'none');", 200);
     $('#lifestyles-box').animate({height: '47px'});   
     $("#lifestyles-edit").slideDown();
-    $('.content.profile').animate({height: '780px'});   
   });
 
   $(".submit.green").click(function() {
@@ -69,7 +68,6 @@ function editLifestyles() {
     setTimeout("$('#edit').css('display', 'block');", 200);
     $('#lifestyles-box').animate({height: '145px'});
     $("#lifestyles-edit").slideUp();
-    $('.content.profile').animate({height: '460px'});   
   });
 }
 
@@ -100,29 +98,22 @@ function search() {
     $('.searching').css('display', 'block');
     $('.not-searching').css('display', 'none');
     $(".search").slideDown();
-    $('.content.recipes-list').animate({height: '700px'});   
   });
 
   $(".searching").click(function() {
     $('.searching').css('display', 'none');
     $('.not-searching').css('display', 'block');
     $(".search").slideUp();
-    $('.content.recipes-list').animate({height: '650px'});   
   });
 }
 
 function colexp() {
   $(".category").click(function() {
     if($(this).hasClass('exp') && $(this).parent().find('.category-elements').length) {
-      var category_height = $(this).parent().find('.category-elements').height();
-      var content_height = $(this).parent().parent().height();
-      var adjusted_height = content_height - 368;
-
       $(this).find('.subtract').removeClass('sub');
       $(this).find('.subtract').addClass('add');  
 
       $(this).parent().find('.category-elements').slideUp();     
-      $(this).parent().parent().animate({height: adjusted_height});
 
       $(this).removeClass('exp');
       $(this).addClass('col');
@@ -133,24 +124,14 @@ function colexp() {
 
       $(this).parent().find('.category-elements').slideDown();
 
-      var content_height = $(this).parent().parent().height();
-      var adjusted_height = content_height + 368;     
-
-      $(this).parent().parent().animate({height: adjusted_height});
-
       $(this).removeClass('col');
       $(this).addClass('exp');
     }
     else if($(this).hasClass('exp') && $(this).parent().find('.range').length) {
-      var category_height = $(this).parent().find('.range').height();
-      var content_height = $(this).parent().parent().height();
-      var adjusted_height = content_height - category_height;
-
       $(this).find('.subtract').removeClass('sub');
       $(this).find('.subtract').addClass('add');  
 
       $(this).parent().find('.range').slideUp();     
-      $(this).parent().parent().animate({height: adjusted_height});
 
       $(this).removeClass('exp');
       $(this).addClass('col');
@@ -160,11 +141,6 @@ function colexp() {
       $(this).find('.subtract').addClass('sub');  
 
       $(this).parent().find('.range').slideDown();
-
-      var content_height = $(this).parent().parent().height();
-      var adjusted_height = content_height + 70;     
-
-      $(this).parent().parent().animate({height: adjusted_height});
 
       $(this).removeClass('col');
       $(this).addClass('exp');
