@@ -980,10 +980,14 @@ h6 {
 	text-align: left;
 }
 
-.finalize-button {
+.finalize-button,
+.save-button,
+.email-button,
+.share-button {
 	display: block;
 	text-align: center;
-	margin: auto;}
+	margin: auto;
+}
 
 .conflicts {
 	width: 100%;
