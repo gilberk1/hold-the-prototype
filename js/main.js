@@ -309,7 +309,6 @@ function modifyLifestyles() {
 function warning() {
   $(document).on('click', '.finalize-button', function() {
     if($(".conflicts.demo li").text() == "1 cup heavy cream") {
-      console.log($('#sub-demo').css('display'));
       setTimeout("$('.warning').css('display', 'block');", 5000);
       $(".warning").slideDown();
       setTimeout("$('.warning').fadeOut(2000);", 5000)
