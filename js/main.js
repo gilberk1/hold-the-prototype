@@ -193,6 +193,148 @@ function sliders() {
   });
 }
 
+function editPeople() {
+  $("#edit-people").click(function() {
+    $('.info-container').css('display', 'none');
+    $('.edit-info-container').css('display', 'block');
+    $("#number-served").val("2").focus().val("2");
+    $('.numpad').css('display', 'block');
+    $("#edit-modifications").css('display', 'none');
+    $('.exclamation').css('display', 'none');
+    $('.finalize-button').css('display', 'none');
+    $('.content').css('margin-bottom', '260px');    
+    $('.content').css('max-height', 'calc(100% - 324px)');    
+  });
+}
+
+function cancel() {
+  $("#cancel-people").click(function() {
+    $('.info-container').css('display', 'block');
+    $('.edit-info-container').css('display', 'none');
+    $('.numpad').css('display', 'none');
+    $("#edit-modifications").css('display', 'block');
+    $('.exclamation').css('display', 'block');
+    $('.finalize-button').css('display', 'block');
+    $('.content').css('margin-bottom', '50px');    
+    $('.content').css('max-height', 'calc(100% - 114px)');    
+  });
+  $("#cancel-sub").click(function() {
+    $('#sub-demo').removeClass('selected-conflict');
+    $('#sub-demo').addClass('unselected-conflict');
+    $('.sub-picker').css('display', 'none');
+    $("#edit-people").css('display', 'block');
+    $("#edit-modifications").css('display', 'block');
+    $('.exclamation').css('display', 'block');
+    $('.finalize-button').css('display', 'block');
+    $('.content').css('margin-bottom', '50px');    
+    $('.content').css('max-height', 'calc(100% - 114px)');    
+  });
+}
+
+function done() {
+  $("#done-people").click(function() {
+    $('.info-container').css('display', 'block');
+    $('.edit-info-container').css('display', 'none');
+    $('.numpad').css('display', 'none');
+    $("#edit-modifications").css('display', 'block');
+    $('.exclamation').css('display', 'block');
+    $('.finalize-button').css('display', 'block');
+    $('.content').css('margin-bottom', '50px');    
+    $('.content').css('max-height', 'calc(100% - 114px)');
+    $('.people-serving h5').replaceWith('<h5>Serves 4 people</h5>');
+    $('.ingredients-list').replaceWith('<ul class = "ingredients-list"><li>2 avocado</li><li>2 egg yolk</li>'
+                                        + '<div class = "conflicts demo"><li>1 cup heavy cream</li><img id = "sub-demo" class = "exclamation" src = "images/Exclamation.png"></div>'
+                                        + '<li>2 clove garlic</li><li>1 lemon, juiced</li>'
+                                        + '<div class = "conflicts"><li>1 cup parmesan cheese, grated</li><img class = "exclamation" src = "images/Exclamation.png"></div>'
+                                        + '<div class = "conflicts"><li>6 pieces bacon</li><img class = "exclamation" src = "images/Exclamation.png"></div>'
+                                        + '<li>1 pound spaghetti </li><li>2 tablespoon olive oil</li></ul>');
+  });
+
+  $("#done-sub").click(function() {
+    $('#sub-demo').removeClass('selected-conflict');
+    $('.sub-picker').css('display', 'none');
+    $("#edit-people").css('display', 'block');
+    $("#edit-modifications").css('display', 'block');
+    $('.exclamation').css('display', 'block');
+    $('#sub-demo').css('display', 'none');
+    $('.finalize-button').css('display', 'block');
+    $('.content').css('margin-bottom', '50px');    
+    $('.content').css('max-height', 'calc(100% - 114px)');
+    $('.conflicts.demo li').replaceWith('<li>2/3 cup soy milk & 1/3 cup olive oil</li>');
+    $('.instructions-list').replaceWith('<ul class = "ingredients-list">'
+                                        + '<li>Whisk soy milk and olive oil in a separate bowl.</li>'
+                                        + '<li>Blend avocado, egg yolk, garlic, and lemon juice in a powerful blender or food processor. Pulse to blend and add soy milk/olive oil gradually. Blend the sauce until smooth and set aside.</li>'
+                                        + '<li>Cut up strips of bacon and cook in a large pan. Set aside.</li>'
+                                        + '<li>In a large pot, bring water to a boil and cook the spaghetti. Drain and coat with olive oil. Add sauce, bacon, parmesan, and salt/pepper, stirring until well combine. Enjoy!</li></ul>');
+    $('.finalize-button').addClass('link');
+    $('.finalize-button').addClass('slideleft');
+    $('.finalize-button').attr('page-load', 'final-recipe');
+    transitions();
+  });
+}
+
+function modifyLifestyles() {
+  $("#edit-modifications").click(function() {
+    $(".lifestyles.modify").slideUp();
+    $('#edit-modifications').fadeOut(500);
+    setTimeout("$('#edit-modifications').css('display', 'none');", 200);
+    $("#edit-people").css('display', 'none');
+    $('.exclamation').css('display', 'none');
+    $("#lifestyles-edit").slideDown();
+    $('.finalize-button').css('display', 'none');
+    if($('.remove').css('display') == 'none') {
+      $('#lifestyles-edit').animate({height: '375px'});
+      $('.recipe-modifications').animate({height: '375px'});
+    }
+    else {
+      $('#lifestyles-edit').animate({height: '450px'});
+      $('.recipe-modifications').animate({height: '450px'});
+    }
+  });
+
+  $(".submit.green").click(function() {
+    $(".lifestyles.modify").slideDown();
+    $('#edit-modifications').fadeIn(500);
+    setTimeout("$('#edit-modifications').css('display', 'block');", 200);
+    $("#edit-people").css('display', 'block');
+    $('.exclamation').css('display', 'block');
+    $('.recipe-modifications').animate({height: '110px'});
+    $('#lifestyles-edit').animate({height: '375px'});
+    $("#lifestyles-edit").slideUp();
+    $('.finalize-button').css('display', 'block');
+    $('.remove').css('display', 'none');
+  });
+}
+
+function warning() {
+  $(document).on('click', '.finalize-button', function() {
+    if($(".conflicts.demo li").text() == "1 cup heavy cream") {
+      console.log($('#sub-demo').css('display'));
+      setTimeout("$('.warning').css('display', 'block');", 5000);
+      $(".warning").slideDown();
+      setTimeout("$('.warning').fadeOut(2000);", 5000)
+      setTimeout("$('.warning').css('display', 'none');", 10000);
+    }
+    else {
+      $('#sub-demo').css('display', 'none');
+    }
+  });
+}
+
+function substitution() {
+  $(document).on('click', '#sub-demo', function () {
+    $('#sub-demo').addClass('selected-conflict');
+    $('.sub-picker').css('display', 'block');
+    $("#edit-people").css('display', 'none');
+    $("#edit-modifications").css('display', 'none');
+    $('.exclamation').css('display', 'none');
+    $('.exclamation.selected-conflict').css('display', 'block');
+    $('.finalize-button').css('display', 'none');
+    $('.content').css('margin-bottom', '181px');    
+    $('.content').css('max-height', 'calc(100% - 245px)'); 
+  });
+}
+
 function transitions() {
   $(".link").fastClick(function () {
     screen = "#" + $(this).attr("page-load");
@@ -271,5 +413,5 @@ $(document).ready(function() {
   editLifestyles();
   search();
   uncheck();
-  colexp(); 
+  colexp();
 });

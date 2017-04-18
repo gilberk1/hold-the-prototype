@@ -1,6 +1,7 @@
-{
+html {
 	height: 100%;
 }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -163,7 +164,7 @@ button:focus {
 }
 
 .input-container input {
-	font-family: 'Mallanna', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	text-indent: 50px;
 	width: 100%;
 	padding: 0;
@@ -172,6 +173,7 @@ button:focus {
 	border: solid 1px #8C8C8C;
 	font-size: 16px;
 	border-radius: 8px;
+	font-weight: 300;
 }
 
 #email-icon { 
@@ -198,6 +200,7 @@ button:focus {
 	color: #FFFFFF;
 	border-radius: 8px;
 	font-weight: 300;
+	cursor: pointer;
 }
 
 fieldset.or-line {
@@ -298,6 +301,7 @@ h4 {
 }
 
 #profile-icon {
+	cursor: pointer;
 	height: 35px;
 	display: block;
     float: right;
@@ -388,6 +392,7 @@ h5 {
 	top: 5%;
 	left: 8%;
 	width: 20%;
+	z-index : 1000;
 }
 
 .tab-bar {
@@ -436,6 +441,7 @@ h1 {
     float: left;
     margin-top: 10px;
     margin-left: 15px;
+    cursor: pointer;
 }
 
 #profile-picture {
@@ -456,6 +462,7 @@ h1 {
 	margin: auto;
 	border-top: .5px solid #C8C7CC;
 	border-bottom: .5px solid #C8C7CC;
+	cursor: pointer;
 }
 
 .text-field.overlap {
@@ -499,6 +506,7 @@ h1 {
 	float: right;
 	margin-right: 5px;
 	margin-top: 10px;
+	cursor: pointer;
 }
 
 .lifestyles {
@@ -526,6 +534,7 @@ h1 {
 	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
+	cursor: pointer;
 }
 
 .lifestyles-edit {
@@ -568,6 +577,7 @@ h1 {
     float: right;
     margin-top: 10px;
     margin-right: 15px;
+    cursor: pointer;
 }
 
 #filter-icon,
@@ -576,6 +586,7 @@ h1 {
     float: left;
     margin-top: 10px;
     margin-left: 15px;
+    cursor: pointer;
 }
 
 .category {
@@ -583,6 +594,7 @@ h1 {
 	height: 40px;
 	border: .5px solid #8C8C8C;
 	background-color: #F9F9F9;
+	cursor: pointer;
 }
 
 .category h1 {
@@ -594,10 +606,6 @@ h1 {
 	padding: 0;
 	float: left;
 }
-/*
-.category-elements {
-	height: 368px;
-}*/
 
 .subtract {
 	height: 30px;
@@ -659,6 +667,7 @@ h1 {
   background-color: white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   margin-top: -4px;
+  cursor: pointer;
 }
 
 #custom-handle.right-handle {
@@ -719,10 +728,12 @@ h1 {
 
 .heart-outline {
 	content: url('../images/Outline Heart.png');
+	cursor: pointer;
 }
 
 .heart-filled {
 	content: url('../images/Filled Heart.png');
+	cursor: pointer;
 }
 
 .gluten-free-unselected {
@@ -790,6 +801,7 @@ h1 {
 
 .breadcrumbs {
 	width: 25%;
+	cursor: pointer;
 }
 
 .arrow {
@@ -798,6 +810,7 @@ h1 {
 
 .sub-breadcrumbs {
 	width: 43%;
+	cursor: pointer;
 }
 
 .recipe-breadcrumbs {
@@ -811,12 +824,13 @@ h1 {
 
 .question {
 	float: right;
-	margin-right: 5px;
-	margin-top: 6px;
+	margin-right: 10px;
+	margin-top: 10px;
 }
 
 .question img {
 	width: 30px;
+	cursor: pointer;
 }
 
 h6 {
@@ -841,7 +855,8 @@ h6 {
 	text-align: right;
 }
 
-.info-container {
+.info-container,
+.edit-info-container {
 	display: block;
 	float: left;
 	width: 55%;
@@ -860,6 +875,7 @@ h6 {
 #edit-people,
 #edit-modifications {
 	height: 20px;
+	cursor: pointer;
 }
 
 #prep-image {
@@ -885,7 +901,8 @@ h6 {
 }
 
 .prep img,
-.cooking img {
+.cooking img,
+.warning img {
 	float: left;
 }
 
@@ -977,10 +994,118 @@ h6 {
 .conflicts img {
 	text-align: left;
 	float: left;
+	z-index: 3000;
 }
 
 .exclamation {
 	height: 30px;
 	margin-left: 3%;
 	margin-top: -5px;
+	cursor: pointer;
+}
+
+.demo-choice {
+	cursor: pointer;
+}
+
+.edit-info-container {
+	display: none;
+}
+
+.people-serving.edit {
+	margin-top: 0;
+	margin-bottom: 35px;
+}
+
+.people-serving.edit input {
+	width: 20%;
+	height: 30px;
+	border: solid 1px #8C8C8C;
+	font-size: 16px;
+	border-radius: 8px;
+	text-align: center;
+}
+
+.people-serving.edit h5{
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+
+.numpad,
+.sub-picker {
+	display: none;
+	width: 100%;
+	z-index: 2000;
+  	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+
+.numpad {
+	height: 260px;
+}
+
+.sub-picker {
+	height: 181px;
+}
+
+.done-cancel {
+	height: 44px;
+	background-color: #F9F9F9;
+	opacity: .95;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.done-cancel h5 {
+	color: #84ba4d;
+	font-size: 18px;
+	width: 50%;
+	float: left;
+	cursor: pointer;
+}
+
+.numpad-image {
+	height: 216px;
+	padding: 0;
+	margin-bottom: -3px;
+}
+
+.picker-image {
+	height: 137px;
+	padding: 0;
+	margin-bottom: -3px;
+}
+
+.warning {
+	display: none;
+	background-color: #FFD459;
+	width: 100%;
+	height: 45px;
+	top: 20px;
+	z-index: 2000;
+	position: fixed;
+}
+
+.toast {
+	display: table;
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.warning img {
+	width: 25px;
+}
+
+.warning h5 {
+	margin-top: 3px;
+	margin-bottom: 3px;
+	margin-left: 10px;
+	float: left;
+}
+
+.selected-conflict {
+	content: url('../images/Exclamation Clicked.png');
 }
