@@ -803,6 +803,10 @@ h1 {
 	width: 25%;
 	cursor: pointer;
 }
+.extend-breadcrumbs {
+	width: 25%;
+	border-right: solid 1px #84BA4D;
+}
 
 .arrow {
 	width: 6%;
@@ -1082,7 +1086,10 @@ h6 {
 	margin-bottom: -3px;
 }
 
-.warning {
+.warning,
+.save,
+.email,
+.share {
 	display: none;
 	background-color: #FFD459;
 	width: 100%;
@@ -1092,6 +1099,12 @@ h6 {
 	position: fixed;
 }
 
+.save,
+.email,
+.share {
+	background-color: #84BA4D;
+}
+
 .toast {
 	display: table;
 	text-align: center;
@@ -1099,17 +1112,70 @@ h6 {
 	margin-top: 10px;
 }
 
-.warning img {
+.warning img,
+.save img,
+.email img,
+.share img {
 	width: 25px;
 }
 
-.warning h5 {
+.warning h5,
+.save h5,
+.email h5,
+.share h5 {
 	margin-top: 3px;
 	margin-bottom: 3px;
 	margin-left: 10px;
-	float: left;
+	float: right;
 }
 
 .selected-conflict {
 	content: url('../images/Exclamation Clicked.png');
+}
+
+.email-popup,
+.share-popup {
+	display: none;
+	position: fixed;
+	width: 100%;
+	top: 66px;
+	z-index: 2000;
+	margin-bottom: 50px;
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	max-height: calc(100% - 116px) ;
+	text-align: center;
+}
+
+.email-popup img,
+.share-popup img {
+	cursor: pointer;
+	width: 315px;
+	margin-top: 40%;
+}
+
+.search-container {
+	display: block;
+	position: relative;
+	width: 72%;
+	text-align: center;
+	margin: auto;
+	margin-top: 18px;
+}
+
+.remove-space {
+	margin-top: 0;
+}
+
+.search-container input {
+	font-family: 'Roboto', sans-serif;
+	text-indent: 50px;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 5%;
+	height: 40px;
+	border: solid 1px #8C8C8C;
+	font-size: 16px;
+	border-radius: 8px;
+	font-weight: 300;
 }

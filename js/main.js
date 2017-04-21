@@ -308,7 +308,7 @@ function modifyLifestyles() {
 
 function warning() {
   $(document).on('click', '.finalize-button', function() {
-    if($(".conflicts.demo li").text() == "1 cup heavy cream") {
+    if($(".conflicts.demo li").text() == "1 cup heavy cream" || $(".conflicts.demo li").text() == "1/2 cup heavy cream") {
       setTimeout("$('.warning').css('display', 'block');", 5000);
       $(".warning").slideDown();
       setTimeout("$('.warning').fadeOut(2000);", 5000)
@@ -334,31 +334,53 @@ function substitution() {
   });
 }
 
+function save() {
+  $(document).on('click', '.save-button', function() {
+    setTimeout("$('.save').css('display', 'block');", 5000);
+    $(".save").slideDown();
+    setTimeout("$('.save').fadeOut(2000);", 5000)
+    setTimeout("$('.save').css('display', 'none');", 10000);
+  });
+}
+
+function emailPopUp() {
+  $(document).on('click', '.email-button', function() {
+    $('.email-popup').fadeIn(2000);
+  });
+}
+
+function email() {
+  $(document).on('click', '.email-popup', function() {
+    $('.email-popup').fadeOut(2000);
+    setTimeout("$('.email').css('display', 'block');", 5000);
+    setTimeout("$('.email').slideDown();", 3000);
+    setTimeout("$('.email').fadeOut(2000);", 5000)
+    setTimeout("$('.email').css('display', 'none');", 10000);
+  });
+}
+
+function sharePopUp() {
+  $(document).on('click', '.share-button', function() {
+    $('.share-popup').fadeIn(2000);
+  });
+}
+
+function share() {
+  $(document).on('click', '.share-popup', function() {
+    $('.share-popup').fadeOut(2000);
+    setTimeout("$('.share').css('display', 'block');", 5000);
+    setTimeout("$('.share').slideDown();", 3000);
+    setTimeout("$('.share').fadeOut(2000);", 5000)
+    setTimeout("$('.share').css('display', 'none');", 10000);
+  });
+}
+
 function transitions() {
   $(".link").fastClick(function () {
     screen = "#" + $(this).attr("page-load");
     if($(this).hasClass("none")){
       $(".sc").removeClass("selected");
       $(screen).addClass("selected");
-    }
-    if($(this).hasClass("slideup")){
-      $(".selected").addClass("previous");
-      $(screen).css({y:$(window).height() + "px"}).addClass("selected");
-      $(screen).transition({y:"0px"},300,"ease",function() {
-        $(".previous").removeClass("selected");
-        $(".previous").removeClass("previous");
-        $(".sc").removeAttr("style");
-      }); 
-    }
-    if($(this).hasClass("slidedown")){
-      $(".selected").addClass("previous");
-      $(screen).addClass("selected");
-      $(screen).css({y:"-" + $(window).height() + "px"});
-      $(screen).transition({y:"0px"},300,"ease",function() {
-        $(".previous").removeClass("selected");
-        $(".previous").removeClass("previous");
-        $(".sc").removeAttr("style");
-      }); 
     }
     if($(this).hasClass("slideleft")){
       $(".selected").addClass("previous");
@@ -368,8 +390,7 @@ function transitions() {
         $(".previous").removeClass("selected");
         $(".previous").removeClass("previous");
         $(".sc").removeAttr("style");
-      }); 
-      
+      });
     }
     if($(this).hasClass("slideright")){
       $(".selected").addClass("previous");
@@ -379,28 +400,7 @@ function transitions() {
         $(".previous").removeClass("selected");
         $(".previous").removeClass("previous");
         $(".sc").removeAttr("style");
-      }); 
-      
-    }
-    if($(this).hasClass("backdown")){
-      $(".selected").addClass("previous");
-      $(screen).show();
-      $(".previous").css("z-index","24").transition({y:$(window).height() + "px"},300,"ease",function() {
-        $(".previous").removeClass("selected");
-        $(".previous").removeClass("previous");
-        $(screen).addClass("selected");
-        $(".sc").removeAttr("style")
-      }); 
-    }
-    if($(this).hasClass("backup")){
-      $(".selected").addClass("previous");
-      $(screen).show();
-      $(".previous").css("z-index","24").transition({y: "-" + $(window).height() + "px"},300,"ease",function() {
-        $(".previous").removeClass("selected");
-        $(".previous").removeClass("previous");
-        $(screen).addClass("selected");
-        $(".sc").removeAttr("style");
-      }); 
+      });
     }
   });
 }
