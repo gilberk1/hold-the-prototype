@@ -359,6 +359,18 @@ function email() {
   });
 }
 
+function editPopUp() {
+  $(document).on('click', '.edit-recipe', function() {
+    $('.edit-popup').fadeIn(2000);
+  });
+}
+
+function edit() {
+  $(document).on('click', '.edit-popup', function() {
+    $('.edit-popup').fadeOut(2000);
+  });
+}
+
 function sharePopUp() {
   $(document).on('click', '.share-button', function() {
     $('.share-popup').fadeIn(2000);
