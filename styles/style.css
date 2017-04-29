@@ -594,7 +594,7 @@ h1 {
 	margin-top: 15px;
 }
 
-.range {
+/*.range {
 	height: 70px;
 	width: 100%;
 	display: block;
@@ -644,6 +644,78 @@ h1 {
 
 .ui-slider-range.ui-corner-all.ui-widget-header {
   background-color: #84ba4d;
+}*/
+
+#min,
+#max {
+	padding: 7px;
+	margin: 15px 5px 5px;
+	width: 70px;
+}
+
+.noUi-connect {
+	background: #84BA4D;
+	box-shadow: none;
+	transition: none;
+}
+.noUi-base:nth-of-type(1){
+	display: none;
+}
+.range {
+	height: 70px;
+	width: 100%;
+	display: block;
+}
+
+.noUi-target {
+	border: none;
+}
+
+.slider {
+	width: 100%;
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+  	padding-top: 20px;
+}
+
+.slider-text {
+  width: 80px;
+  margin-top: 2px;
+}
+
+#serving-slider,
+#prep-slider,
+#cooking-slider {
+  width: 30%;
+  height: 4px;
+  margin: 8px 32px 8px 32px;
+}
+
+.noUi-handle {
+  position: relative;
+  bottom: 16px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-top: -4px;
+  cursor: pointer;
+}
+
+.noUi-horizontal .noUi-handle {
+	width: 20px;
+	height: 20px;
+}
+
+.noUi-handle:after,
+.noUi-handle:before {
+	display: none;
+}
+
+.noUi-handle:focus {
+    outline:none;
+    border: 1px solid #8C8C8C;
 }
 
 .lifestyles-edit h3{
