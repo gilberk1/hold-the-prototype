@@ -165,8 +165,8 @@ function sliders() {
     max: 30,
     values: [ 2, 30 ],
     slide: ( event, ui ) => {
-      $("#left-people").text(`${ui.values[0]} people`);
-      $("#right-people").text(`${ui.values[1]} people`);
+      $("#left-people").text('${ui.values[0]} people');
+      $("#right-people").text('${ui.values[1]} people');
     }
   });
 
@@ -176,8 +176,8 @@ function sliders() {
     max: 60,
     values: [ 0, 60 ],
     slide: ( event, ui ) => {
-      $("#prep-left-mins").text(`${ui.values[0]} mins`);
-      $("#prep-right-mins").text(`${ui.values[1]} mins`);
+      $("#prep-left-mins").text('${ui.values[0]} mins');
+      $("#prep-right-mins").text('${ui.values[1]} mins');
     }
   });
 
@@ -187,8 +187,8 @@ function sliders() {
     max: 180,
     values: [ 0, 180 ],
     slide: ( event, ui ) => {
-      $("#cooking-left-mins").text(`${ui.values[0]} mins`);
-      $("#cooking-right-mins").text(`${ui.values[1]} mins`);
+      $("#cooking-left-mins").text('${ui.values[0]} mins');
+      $("#cooking-right-mins").text('${ui.values[1]} mins');
     }
   });
 }
@@ -198,12 +198,14 @@ function editPeople() {
     $('.info-container').css('display', 'none');
     $('.edit-info-container').css('display', 'block');
     $("#number-served").val("2").focus().val("2");
-    $('.numpad').css('display', 'block');
+    $('#numpad').css('display', 'block');
     $("#edit-modifications").css('display', 'none');
     $('.exclamation').css('display', 'none');
     $('.finalize-button').css('display', 'none');
-    $('.content').css('margin-bottom', '260px');    
-    $('.content').css('max-height', 'calc(100% - 324px)');    
+    var height = $("#numpad").height();
+    $('.content').css('margin-bottom', height);
+    var subHeight = 64 + height;
+    $('.content').css('max-height', 'calc(100% - ' + subHeight + 'px)');    
   });
 }
 
@@ -211,17 +213,17 @@ function cancel() {
   $("#cancel-people").click(function() {
     $('.info-container').css('display', 'block');
     $('.edit-info-container').css('display', 'none');
-    $('.numpad').css('display', 'none');
+    $('#numpad').css('display', 'none');
     $("#edit-modifications").css('display', 'block');
     $('.exclamation').css('display', 'block');
     $('.finalize-button').css('display', 'block');
     $('.content').css('margin-bottom', '50px');    
-    $('.content').css('max-height', 'calc(100% - 114px)');    
+    $('.content').css('max-height', 'calc(100% - 114px)');
   });
   $("#cancel-sub").click(function() {
     $('#sub-demo').removeClass('selected-conflict');
     $('#sub-demo').addClass('unselected-conflict');
-    $('.sub-picker').css('display', 'none');
+    $('#sub-picker').css('display', 'none');
     $("#edit-people").css('display', 'block');
     $("#edit-modifications").css('display', 'block');
     $('.exclamation').css('display', 'block');
@@ -235,7 +237,7 @@ function done() {
   $("#done-people").click(function() {
     $('.info-container').css('display', 'block');
     $('.edit-info-container').css('display', 'none');
-    $('.numpad').css('display', 'none');
+    $('#numpad').css('display', 'none');
     $("#edit-modifications").css('display', 'block');
     $('.exclamation').css('display', 'block');
     $('.finalize-button').css('display', 'block');
@@ -252,7 +254,7 @@ function done() {
 
   $("#done-sub").click(function() {
     $('#sub-demo').removeClass('selected-conflict');
-    $('.sub-picker').css('display', 'none');
+    $('#sub-picker').css('display', 'none');
     $("#edit-people").css('display', 'block');
     $("#edit-modifications").css('display', 'block');
     $('.exclamation').css('display', 'block');
@@ -323,14 +325,16 @@ function warning() {
 function substitution() {
   $(document).on('click', '#sub-demo', function () {
     $('#sub-demo').addClass('selected-conflict');
-    $('.sub-picker').css('display', 'block');
+    $('#sub-picker').css('display', 'block');
     $("#edit-people").css('display', 'none');
     $("#edit-modifications").css('display', 'none');
     $('.exclamation').css('display', 'none');
     $('.exclamation.selected-conflict').css('display', 'block');
     $('.finalize-button').css('display', 'none');
-    $('.content').css('margin-bottom', '181px');    
-    $('.content').css('max-height', 'calc(100% - 245px)'); 
+    var height = $("#sub-picker").height();
+    $('.content').css('margin-bottom', height);    
+    var subHeight = 64 + height;
+    $('.content').css('max-height', 'calc(100% - ' + subHeight + 'px)');    
   });
 }
 
@@ -346,27 +350,53 @@ function save() {
 function emailPopUp() {
   $(document).on('click', '.email-button', function() {
     $('.email-popup').fadeIn(2000);
+    var height = $('#email-popup').height();
+    var marginDifference = height-234;
+    var margin = marginDifference/2;
+    $('.email-choice').css('margin-top', margin);
+    $('.email-choice').css('margin-bottom', margin);
   });
 }
 
 function email() {
-  $(document).on('click', '.email-popup', function() {
+  $(document).on('click', '#myself', function() {
     $('.email-popup').fadeOut(2000);
     setTimeout("$('.email').css('display', 'block');", 5000);
     setTimeout("$('.email').slideDown();", 3000);
     setTimeout("$('.email').fadeOut(2000);", 5000)
     setTimeout("$('.email').css('display', 'none');", 10000);
   });
+  $(document).on('click', '#friend', function() {
+    $('.email-popup').fadeOut(2000);
+    setTimeout("$('.email').css('display', 'block');", 5000);
+    setTimeout("$('.email').slideDown();", 3000);
+    setTimeout("$('.email').fadeOut(2000);", 5000)
+    setTimeout("$('.email').css('display', 'none');", 10000);
+  });
+  $(document).on('click', '#cancel', function() {
+    $('.email-popup').fadeOut(2000);
+  });
 }
 
 function editPopUp() {
   $(document).on('click', '.edit-recipe', function() {
     $('.edit-popup').fadeIn(2000);
+    var height = $('#edit-popup').height();
+    var marginDifference = height-234;
+    var margin = marginDifference/2;
+    $('.edit-choice').css('margin-top', margin);
+    $('.edit-choice').css('margin-bottom', margin);
   });
 }
 
 function edit() {
-  $(document).on('click', '.edit-popup', function() {
+  $(document).on('click', '#current', function() {
+    $('.edit-popup').fadeOut(2000);
+  });
+  $(document).on('click', '#new', function() {
+    $('.edit-popup').fadeOut(2000);
+  });
+  $(document).on('click', '#cancel', function() {
     $('.edit-popup').fadeOut(2000);
   });
 }
@@ -374,6 +404,12 @@ function edit() {
 function sharePopUp() {
   $(document).on('click', '.share-button', function() {
     $('.share-popup').fadeIn(2000);
+    var height = $('#share-popup').height();
+    var imageHeight = $('.share-image').height();
+    var marginDifference = height-imageHeight;
+    var margin = marginDifference/2;
+    $('.share-image').css('margin-top', margin);
+    $('.share-image').css('margin-bottom', margin);
   });
 }
 
@@ -384,6 +420,47 @@ function share() {
     setTimeout("$('.share').slideDown();", 3000);
     setTimeout("$('.share').fadeOut(2000);", 5000)
     setTimeout("$('.share').css('display', 'none');", 10000);
+  });
+}
+
+function onboarding() {
+  $(".onboarding-begin").click(function() {
+    $('.onboarding-popup.first').fadeIn(1000);
+    $('.onboarding-begin').css('display', 'none');
+    $('.onboarding-cancel').css('display', 'block');
+    $('.content').css('overflow-y', 'hidden');
+});
+
+  $(".onboarding-cancel").click(function() {
+    $('.onboarding-popup.first').fadeOut(1000);
+    $('.onboarding-popup.second').fadeOut(1000);
+    $('.onboarding-popup.second-piece').fadeOut(1000);
+    $('.onboarding-popup.third').fadeOut(1000);
+    $('.onboarding-begin').css('display', 'block');
+    $('.onboarding-cancel').css('display', 'none');
+    $('.content').css('overflow-y', 'scroll');
+  });
+
+  $(".onboarding-button").click(function() {
+    $('.onboarding-popup.first').fadeOut(1000);
+    $('.onboarding-popup.second').fadeIn(1000);
+    $('.onboarding-popup.second-piece').fadeIn(1000);
+  });
+
+  $(".onboarding2-button").click(function() {
+    $('.onboarding-popup.second').fadeOut(1000);
+    $('.onboarding-popup.second-piece').fadeOut(1000);
+    $('.onboarding-popup.third').fadeIn(1000);
+  });
+
+  $(".onboarding3-button").click(function() {
+    $('.onboarding-popup.first').fadeOut(1000);
+    $('.onboarding-popup.second').fadeOut(1000);
+    $('.onboarding-popup.second-piece').fadeOut(1000);
+    $('.onboarding-popup.third').fadeOut(1000);
+    $('.onboarding-begin').css('display', 'block');
+    $('.onboarding-cancel').css('display', 'none');
+    $('.content').css('overflow-y', 'scroll');
   });
 }
 
