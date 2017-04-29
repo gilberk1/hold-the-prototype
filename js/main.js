@@ -156,40 +156,144 @@ function uncheck() {
   });
 }
 
-function sliders() {
-  const handle = $("#custom-handle");
+// function sliders() {
+//   const handle = $("#custom-handle");
   
-  $("#serving-slider-range").slider({
-    range: true,
-    min: 2,
-    max: 30,
-    values: [ 2, 30 ],
-    slide: ( event, ui ) => {
-      $("#left-people").text(`${ui.values[0]} people`);
-      $("#right-people").text(`${ui.values[1]} people`);
+//   $("#serving-slider-range").slider({
+//     range: true,
+//     min: 2,
+//     max: 30,
+//     values: [ 2, 30 ],
+//     slide: ( event, ui ) => {
+//       $("#left-people").text(`${ui.values[0]} people`);
+//       $("#right-people").text(`${ui.values[1]} people`);
+//     }
+//   });
+
+//   $("#prep-slider-range").slider({
+//     range: true,
+//     min: 0,
+//     max: 60,
+//     values: [ 0, 60 ],
+//     slide: ( event, ui ) => {
+//       $("#prep-left-mins").text(`${ui.values[0]} mins`);
+//       $("#prep-right-mins").text(`${ui.values[1]} mins`);
+//     }
+//   });
+
+//   $("#cooking-slider-range").slider({
+//     range: true,
+//     min: 0,
+//     max: 180,
+//     values: [ 0, 180 ],
+//     slide: ( event, ui ) => {
+//       $("#cooking-left-mins").text(`${ui.values[0]} mins`);
+//       $("#cooking-right-mins").text(`${ui.values[1]} mins`);
+//     }
+//   });
+// }
+
+function servingSlider() {
+
+  var servingSlider = document.getElementById('serving-slider');
+
+  noUiSlider.create(servingSlider, {
+    start: [ 2, 30 ],
+    connect: true,
+    step: 1,
+    range: {
+      'min': 2,
+      'max': 30
     }
   });
+  var left = document.getElementById('serving-min');
+  var right = document.getElementById('serving-max');
+  var minValue = document.getElementById('serving-min-value');
+  var maxValue = document.getElementById('serving-max-value');
+    
 
-  $("#prep-slider-range").slider({
-    range: true,
-    min: 0,
-    max: 60,
-    values: [ 0, 60 ],
-    slide: ( event, ui ) => {
-      $("#prep-left-mins").text(`${ui.values[0]} mins`);
-      $("#prep-right-mins").text(`${ui.values[1]} mins`);
+  servingSlider.noUiSlider.on('update', function( values, handle ) {
+
+    var value = values[handle];
+
+    left.value = values[0];
+    right.value = values[1];
+
+    var setMin = parseInt(left.value);
+    minValue.innerHTML = setMin + " people";
+    
+    var setMax = parseInt(right.value);
+    maxValue.innerHTML = setMax + " people";
+  });
+}
+
+
+function prepSlider() {
+
+  var prepSlider = document.getElementById('prep-slider');
+
+  noUiSlider.create(prepSlider, {
+    start: [ 0, 60 ],
+    connect: true,
+    step: 1,
+    range: {
+      'min': 0,
+      'max': 60
     }
   });
+  var left = document.getElementById('prep-min');
+  var right = document.getElementById('prep-max');
+  var minValue = document.getElementById('prep-min-value');
+  var maxValue = document.getElementById('prep-max-value');
+    
 
-  $("#cooking-slider-range").slider({
-    range: true,
-    min: 0,
-    max: 180,
-    values: [ 0, 180 ],
-    slide: ( event, ui ) => {
-      $("#cooking-left-mins").text(`${ui.values[0]} mins`);
-      $("#cooking-right-mins").text(`${ui.values[1]} mins`);
+  prepSlider.noUiSlider.on('update', function( values, handle ) {
+
+    var value = values[handle];
+
+    left.value = values[0];
+    right.value = values[1];
+
+    var setMin = parseInt(left.value);
+    minValue.innerHTML = setMin + " mins";
+    
+    var setMax = parseInt(right.value);
+    maxValue.innerHTML = setMax + " mins";
+  });
+}
+
+
+function cookingSlider() {
+
+  var cookingSlider = document.getElementById('cooking-slider');
+
+  noUiSlider.create(cookingSlider, {
+    start: [ 0, 180 ],
+    connect: true,
+    step: 1,
+    range: {
+      'min': 0,
+      'max': 180
     }
+  });
+  var left = document.getElementById('cooking-min');
+  var right = document.getElementById('cooking-max');
+  var minValue = document.getElementById('cooking-min-value');
+  var maxValue = document.getElementById('cooking-max-value');
+    
+
+  cookingSlider.noUiSlider.on('update', function( values, handle ) {
+
+    var value = values[handle];
+
+    left.value = values[0];
+    right.value = values[1];
+
+    var setMin = parseInt(left.value);
+    minValue.innerHTML = setMin + " mins";
+    
+    var setMax = parseInt(right.value);
+    maxValue.innerHTML = setMax + " mins";
   });
 }
 
