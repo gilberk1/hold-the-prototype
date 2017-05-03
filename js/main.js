@@ -156,43 +156,6 @@ function uncheck() {
   });
 }
 
-// function sliders() {
-//   const handle = $("#custom-handle");
-  
-//   $("#serving-slider-range").slider({
-//     range: true,
-//     min: 2,
-//     max: 30,
-//     values: [ 2, 30 ],
-//     slide: ( event, ui ) => {
-//       $("#left-people").text(`${ui.values[0]} people`);
-//       $("#right-people").text(`${ui.values[1]} people`);
-//     }
-//   });
-
-//   $("#prep-slider-range").slider({
-//     range: true,
-//     min: 0,
-//     max: 60,
-//     values: [ 0, 60 ],
-//     slide: ( event, ui ) => {
-//       $("#prep-left-mins").text(`${ui.values[0]} mins`);
-//       $("#prep-right-mins").text(`${ui.values[1]} mins`);
-//     }
-//   });
-
-//   $("#cooking-slider-range").slider({
-//     range: true,
-//     min: 0,
-//     max: 180,
-//     values: [ 0, 180 ],
-//     slide: ( event, ui ) => {
-//       $("#cooking-left-mins").text(`${ui.values[0]} mins`);
-//       $("#cooking-right-mins").text(`${ui.values[1]} mins`);
-//     }
-//   });
-// }
-
 function servingSlider() {
 
   var servingSlider = document.getElementById('serving-slider');
@@ -566,6 +529,16 @@ function onboarding() {
     $('.onboarding-cancel').css('display', 'none');
     $('.content').css('overflow-y', 'scroll');
   });
+}
+
+function swipeDelete() {
+  Swiped.init({
+    query: '.delete div',
+    right: 400,
+    onOpen: function() {
+        this.destroy(true)
+    }
+});
 }
 
 function transitions() {
