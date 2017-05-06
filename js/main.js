@@ -262,17 +262,19 @@ function cookingSlider() {
 
 function editPeople() {
   $("#edit-people").click(function() {
-    $('.info-container').css('display', 'none');
-    $('.edit-info-container').css('display', 'block');
-    $("#number-served").val("2").focus().val("2");
-    $('#numpad').css('display', 'block');
-    $("#edit-modifications").css('display', 'none');
-    $('.exclamation').css('display', 'none');
-    $('.finalize-button').css('display', 'none');
-    var height = $("#numpad").height();
-    $('.content').css('margin-bottom', height);
-    var subHeight = 64 + height;
-    $('.content').css('max-height', 'calc(100% - ' + subHeight + 'px)');    
+    if($('.adjustment').text() == "Serves 2 people") {
+      $('.info-container').css('display', 'none');
+      $('.edit-info-container').css('display', 'block');
+      $("#number-served").val("2").focus().val("2");
+      $('#numpad').css('display', 'block');
+      $("#edit-modifications").css('display', 'none');
+      $('.exclamation').css('display', 'none');
+      $('.finalize-button').css('display', 'none');
+      var height = $("#numpad").height();
+      $('.content').css('margin-bottom', height);
+      var subHeight = 64 + height;
+      $('.content').css('max-height', 'calc(100% - ' + subHeight + 'px)');    
+    }
   });
 }
 
@@ -310,7 +312,7 @@ function done() {
     $('.finalize-button').css('display', 'block');
     $('.content').css('margin-bottom', '50px');    
     $('.content').css('max-height', 'calc(100% - 114px)');
-    $('.people-serving h5').replaceWith('<h5>Serves 4 people</h5>');
+    $('.adjustment').replaceWith('<h5 class = "adjustment">Serves 4 people</h5>');
     $('.ingredients-list').replaceWith('<ul class = "ingredients-list"><li>2 avocado</li><li>2 egg yolk</li>'
                                         + '<div class = "conflicts demo"><li>1 cup heavy cream</li><img id = "sub-demo" class = "exclamation" src = "images/Exclamation.png"></div>'
                                         + '<li>2 clove garlic</li><li>1 lemon, juiced</li>'
@@ -320,25 +322,25 @@ function done() {
   });
 
   $("#done-sub").click(function() {
-    $('#sub-demo').removeClass('selected-conflict');
-    $('#sub-picker').css('display', 'none');
-    $("#edit-people").css('display', 'block');
-    $("#edit-modifications").css('display', 'block');
-    $('.exclamation').css('display', 'block');
-    $('#sub-demo').css('display', 'none');
-    $('.finalize-button').css('display', 'block');
-    $('.content').css('margin-bottom', '50px');    
-    $('.content').css('max-height', 'calc(100% - 114px)');
-    $('.conflicts.demo li').replaceWith('<li>2/3 cup soy milk & 1/3 cup olive oil</li>');
-    $('.instructions-list').replaceWith('<ul class = "ingredients-list">'
-                                        + '<li>Whisk soy milk and olive oil in a separate bowl.</li>'
-                                        + '<li>Blend avocado, egg yolk, garlic, and lemon juice in a powerful blender or food processor. Pulse to blend and add soy milk/olive oil gradually. Blend the sauce until smooth and set aside.</li>'
-                                        + '<li>Cut up strips of bacon and cook in a large pan. Set aside.</li>'
-                                        + '<li>In a large pot, bring water to a boil and cook the spaghetti. Drain and coat with olive oil. Add sauce, bacon, parmesan, and salt/pepper, stirring until well combine. Enjoy!</li></ul>');
-    $('.finalize-button').addClass('link');
-    $('.finalize-button').addClass('slideleft');
-    $('.finalize-button').attr('page-load', 'final-recipe');
-    transitions();
+      $('#sub-demo').removeClass('selected-conflict');
+      $('#sub-picker').css('display', 'none');
+      $("#edit-people").css('display', 'block');
+      $("#edit-modifications").css('display', 'block');
+      $('.exclamation').css('display', 'block');
+      $('#sub-demo').css('display', 'none');
+      $('.finalize-button').css('display', 'block');
+      $('.content').css('margin-bottom', '50px');    
+      $('.content').css('max-height', 'calc(100% - 114px)');
+      $('.conflicts.demo li').replaceWith('<li>2/3 cup soy milk & 1/3 cup olive oil</li>');
+      $('.instructions-list').replaceWith('<ul class = "ingredients-list">'
+                                          + '<li>Whisk soy milk and olive oil in a separate bowl.</li>'
+                                          + '<li>Blend avocado, egg yolk, garlic, and lemon juice in a powerful blender or food processor. Pulse to blend and add soy milk/olive oil gradually. Blend the sauce until smooth and set aside.</li>'
+                                          + '<li>Cut up strips of bacon and cook in a large pan. Set aside.</li>'
+                                          + '<li>In a large pot, bring water to a boil and cook the spaghetti. Drain and coat with olive oil. Add sauce, bacon, parmesan, and salt/pepper, stirring until well combine. Enjoy!</li></ul>');
+      $('.finalize-button').addClass('link');
+      $('.finalize-button').addClass('slideleft');
+      $('.finalize-button').attr('page-load', 'final-recipe');
+      transitions();
   });
 }
 
@@ -391,17 +393,19 @@ function warning() {
 
 function substitution() {
   $(document).on('click', '#sub-demo', function () {
-    $('#sub-demo').addClass('selected-conflict');
-    $('#sub-picker').css('display', 'block');
-    $("#edit-people").css('display', 'none');
-    $("#edit-modifications").css('display', 'none');
-    $('.exclamation').css('display', 'none');
-    $('.exclamation.selected-conflict').css('display', 'block');
-    $('.finalize-button').css('display', 'none');
-    var height = $("#sub-picker").height();
-    $('.content').css('margin-bottom', height);    
-    var subHeight = 64 + height;
-    $('.content').css('max-height', 'calc(100% - ' + subHeight + 'px)');    
+    if($('.adjustment').text() == "Serves 4 people") {
+      $('#sub-demo').addClass('selected-conflict');
+      $('#sub-picker').css('display', 'block');
+      $("#edit-people").css('display', 'none');
+      $("#edit-modifications").css('display', 'none');
+      $('.exclamation').css('display', 'none');
+      $('.exclamation.selected-conflict').css('display', 'block');
+      $('.finalize-button').css('display', 'none');
+      var height = $("#sub-picker").height();
+      $('.content').css('margin-bottom', height);    
+      var subHeight = 64 + height;
+      $('.content').css('max-height', 'calc(100% - ' + subHeight + 'px)');    
+    }
   });
 }
 
@@ -496,7 +500,7 @@ function onboarding() {
     $('.onboarding-begin').css('display', 'none');
     $('.onboarding-cancel').css('display', 'block');
     $('.content').css('overflow-y', 'hidden');
-});
+  });
 
   $(".onboarding-cancel").click(function() {
     $('.onboarding-popup.first').fadeOut(1000);
@@ -538,7 +542,7 @@ function swipeDelete() {
     onOpen: function() {
         this.destroy(true)
     }
-});
+  });
 }
 
 function transitions() {
