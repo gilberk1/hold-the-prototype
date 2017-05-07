@@ -1,3 +1,14 @@
+$(document).ready(function() {
+  transitions();
+  changeHearts();
+  selectLifestyles();
+  editLifestyles();
+  search();
+  uncheck();
+  colexp();
+});
+
+// functions are for the sign in animation
 function baconFade() {
   	$('#bacon').fadeIn(1000, function() {
   		setTimeout("$('#bacon').fadeOut(500); breadFade();",2000);
@@ -46,6 +57,8 @@ function tomatoesFade() {
   	});
 }
 
+
+// functions to fill in or hollow out the hearts on recipes
 function changeHearts() {
   $(".heart-outline").click(function() {
     $(this).toggleClass('heart-outline');
@@ -53,7 +66,9 @@ function changeHearts() {
   });
 }
 
+// function to edit lifestyles
 function editLifestyles() {
+  // click edit button to bring down the edit lifestyles slideout
   $("#edit").click(function() {
     $("#lifestyles").slideUp();
     $('#edit').fadeOut(500);
@@ -61,7 +76,7 @@ function editLifestyles() {
     $('#lifestyles-box').animate({height: '47px'});   
     $("#lifestyles-edit").slideDown();
   });
-
+  // click submit button to bring up the edit lifestyles slideout
   $(".submit.green").click(function() {
     $("#lifestyles").slideDown();
     $('#edit').fadeIn(500);
@@ -71,35 +86,39 @@ function editLifestyles() {
   });
 }
 
+// function to select lifestyles
 function selectLifestyles() {
+  // click to select or unselect gluten-free icon
   $(".gluten-free-unselected").click(function() {
     $(this).toggleClass('gluten-free-unselected');
     $(this).toggleClass('gluten-free-selected animated pulse');
   });
-
+  // click to select or unselect vegetarian icon
   $(".vegetarian-selected").click(function() {
     $(this).toggleClass('vegetarian-unselected');
     $(this).toggleClass('vegetarian-selected animated pulse');
   });
-
+  // click to select or unselect dairy-free icon
   $(".dairy-free-selected").click(function() {
     $(this).toggleClass('dairy-free-unselected');
     $(this).toggleClass('dairy-free-selected animated pulse');
   });
-
+  // click to select or unselect none icon
   $(".none-selected").click(function() {
     $(this).toggleClass('none-unselected');
     $(this).toggleClass('none-selected animated pulse');
   });
 }
 
+// function to search
 function search() {
+  // click to bring down the search field
   $(".not-searching").click(function() {
     $('.searching').css('display', 'block');
     $('.not-searching').css('display', 'none');
     $(".search").slideDown();
   });
-
+  // click to bring up the search field
   $(".searching").click(function() {
     $('.searching').css('display', 'none');
     $('.not-searching').css('display', 'block');
@@ -107,41 +126,39 @@ function search() {
   });
 }
 
+// function to collapse and expand
 function colexp() {
+  // click to expand or collapse the category
   $(".category").click(function() {
+    // collapse the category elements
     if($(this).hasClass('exp') && $(this).parent().find('.category-elements').length) {
       $(this).find('.subtract').removeClass('sub');
       $(this).find('.subtract').addClass('add');  
-
       $(this).parent().find('.category-elements').slideUp();     
-
       $(this).removeClass('exp');
       $(this).addClass('col');
     }
+    // expand the category elements
     else if($(this).hasClass('col') && $(this).parent().find('.category-elements').length) {
       $(this).find('.subtract').removeClass('add');
       $(this).find('.subtract').addClass('sub');  
-
       $(this).parent().find('.category-elements').slideDown();
-
       $(this).removeClass('col');
       $(this).addClass('exp');
     }
+    // collapse the range
     else if($(this).hasClass('exp') && $(this).parent().find('.range').length) {
       $(this).find('.subtract').removeClass('sub');
       $(this).find('.subtract').addClass('add');  
-
       $(this).parent().find('.range').slideUp();     
-
       $(this).removeClass('exp');
       $(this).addClass('col');
     }
+    // expand the range
     else if($(this).hasClass('col') && $(this).parent().find('.range')) {
       $(this).find('.subtract').removeClass('add');
       $(this).find('.subtract').addClass('sub');  
-
       $(this).parent().find('.range').slideDown();
-
       $(this).removeClass('col');
       $(this).addClass('exp');
     }
@@ -149,6 +166,7 @@ function colexp() {
 
 }
 
+// function to uncheck in text fields
 function uncheck() {
   $(".text-field").click(function() {
     $(this).find('.filter-check').toggleClass('checked');
@@ -156,8 +174,9 @@ function uncheck() {
   });
 }
 
+// function to create and update serving slider 
+// pulled from NoUiSlider
 function servingSlider() {
-
   var servingSlider = document.getElementById('serving-slider');
 
   noUiSlider.create(servingSlider, {
@@ -169,11 +188,11 @@ function servingSlider() {
       'max': 30
     }
   });
+
   var left = document.getElementById('serving-min');
   var right = document.getElementById('serving-max');
   var minValue = document.getElementById('serving-min-value');
   var maxValue = document.getElementById('serving-max-value');
-    
 
   servingSlider.noUiSlider.on('update', function( values, handle ) {
 
@@ -190,9 +209,9 @@ function servingSlider() {
   });
 }
 
-
+// function to create and update prep time slider
+// pulled from NoUiSlider
 function prepSlider() {
-
   var prepSlider = document.getElementById('prep-slider');
 
   noUiSlider.create(prepSlider, {
@@ -204,11 +223,11 @@ function prepSlider() {
       'max': 60
     }
   });
+
   var left = document.getElementById('prep-min');
   var right = document.getElementById('prep-max');
   var minValue = document.getElementById('prep-min-value');
   var maxValue = document.getElementById('prep-max-value');
-    
 
   prepSlider.noUiSlider.on('update', function( values, handle ) {
 
@@ -225,9 +244,9 @@ function prepSlider() {
   });
 }
 
-
+// function to create and update cooking time slider
+// pulled from NoUiSlider
 function cookingSlider() {
-
   var cookingSlider = document.getElementById('cooking-slider');
 
   noUiSlider.create(cookingSlider, {
@@ -239,11 +258,11 @@ function cookingSlider() {
       'max': 180
     }
   });
+
   var left = document.getElementById('cooking-min');
   var right = document.getElementById('cooking-max');
   var minValue = document.getElementById('cooking-min-value');
   var maxValue = document.getElementById('cooking-max-value');
-    
 
   cookingSlider.noUiSlider.on('update', function( values, handle ) {
 
@@ -260,8 +279,11 @@ function cookingSlider() {
   });
 }
 
+// function to edit people on choosing recipe
 function editPeople() {
+  // click edit people button
   $("#edit-people").click(function() {
+    // To make sure that the adjustment happens in the demo
     if($('.adjustment').text() == "Serves 2 people") {
       $('.info-container').css('display', 'none');
       $('.edit-info-container').css('display', 'block');
@@ -278,7 +300,9 @@ function editPeople() {
   });
 }
 
+// function to cancel in people or substitution
 function cancel() {
+  // click to cancel editing the number of people
   $("#cancel-people").click(function() {
     $('.info-container').css('display', 'block');
     $('.edit-info-container').css('display', 'none');
@@ -289,6 +313,7 @@ function cancel() {
     $('.content').css('margin-bottom', '50px');    
     $('.content').css('max-height', 'calc(100% - 114px)');
   });
+  // click to cancel substituting the ingredient
   $("#cancel-sub").click(function() {
     $('#sub-demo').removeClass('selected-conflict');
     $('#sub-demo').addClass('unselected-conflict');
@@ -302,7 +327,9 @@ function cancel() {
   });
 }
 
+// function to finalizing changes in people or substitution
 function done() {
+  // click to change from 2 to 4 people
   $("#done-people").click(function() {
     $('.info-container').css('display', 'block');
     $('.edit-info-container').css('display', 'none');
@@ -320,7 +347,7 @@ function done() {
                                         + '<div class = "conflicts"><li>6 pieces bacon</li><img class = "exclamation" src = "images/Exclamation.png"></div>'
                                         + '<li>1 pound spaghetti </li><li>2 tablespoon olive oil</li></ul>');
   });
-
+  // click to subsitute heavy cream to soy milk/olive oil
   $("#done-sub").click(function() {
       $('#sub-demo').removeClass('selected-conflict');
       $('#sub-picker').css('display', 'none');
@@ -344,7 +371,9 @@ function done() {
   });
 }
 
+// function to finalizing changes in people or substitution
 function modifyLifestyles() {
+  // click to edit the lifestyles and bring down the slideout
   $("#edit-modifications").click(function() {
     $(".lifestyles.modify").slideUp();
     $('#edit-modifications').fadeOut(500);
@@ -362,7 +391,7 @@ function modifyLifestyles() {
       $('.recipe-modifications').animate({height: '450px'});
     }
   });
-
+  // click to submit lifestyle changes and bring up the slideout 
   $(".submit.green").click(function() {
     $(".lifestyles.modify").slideDown();
     $('#edit-modifications').fadeIn(500);
@@ -377,8 +406,11 @@ function modifyLifestyles() {
   });
 }
 
+// function to show the warning toast
 function warning() {
+  // click the finalize button 
   $(document).on('click', '.finalize-button', function() {
+    // To make sure that the warning only comes up if conflicts are present
     if($(".conflicts.demo li").text() == "1 cup heavy cream" || $(".conflicts.demo li").text() == "1/2 cup heavy cream") {
       setTimeout("$('.warning').css('display', 'block');", 5000);
       $(".warning").slideDown();
@@ -391,8 +423,11 @@ function warning() {
   });
 }
 
+// function to show sub picker
 function substitution() {
+  // click the exclamation point
   $(document).on('click', '#sub-demo', function () {
+    // To make sure that the number of people is 4
     if($('.adjustment').text() == "Serves 4 people") {
       $('#sub-demo').addClass('selected-conflict');
       $('#sub-picker').css('display', 'block');
@@ -409,7 +444,9 @@ function substitution() {
   });
 }
 
+// function to show save toast
 function save() {
+  // click the save  button
   $(document).on('click', '.save-button', function() {
     setTimeout("$('.save').css('display', 'block');", 5000);
     $(".save").slideDown();
@@ -418,7 +455,9 @@ function save() {
   });
 }
 
+// function to show email popup
 function emailPopUp() {
+  // click the email button
   $(document).on('click', '.email-button', function() {
     $('.email-popup').fadeIn(2000);
     var height = $('#email-popup').height();
@@ -429,7 +468,9 @@ function emailPopUp() {
   });
 }
 
+// function to write email
 function email() {
+  // click myself
   $(document).on('click', '#myself', function() {
     $('.email-popup').fadeOut(2000);
     setTimeout("$('.email').css('display', 'block');", 5000);
@@ -437,6 +478,7 @@ function email() {
     setTimeout("$('.email').fadeOut(2000);", 5000)
     setTimeout("$('.email').css('display', 'none');", 10000);
   });
+  // click friend
   $(document).on('click', '#friend', function() {
     $('.email-popup').fadeOut(2000);
     setTimeout("$('.email').css('display', 'block');", 5000);
@@ -444,12 +486,15 @@ function email() {
     setTimeout("$('.email').fadeOut(2000);", 5000)
     setTimeout("$('.email').css('display', 'none');", 10000);
   });
+  // click cancel
   $(document).on('click', '#cancel', function() {
     $('.email-popup').fadeOut(2000);
   });
 }
 
+// function to show edit popup
 function editPopUp() {
+  // click edit button for recipe
   $(document).on('click', '.edit-recipe', function() {
     $('.edit-popup').fadeIn(2000);
     var height = $('#edit-popup').height();
@@ -460,19 +505,25 @@ function editPopUp() {
   });
 }
 
+// function to edit recipe
 function edit() {
+  // click current
   $(document).on('click', '#current', function() {
     $('.edit-popup').fadeOut(2000);
   });
+  // click new
   $(document).on('click', '#new', function() {
     $('.edit-popup').fadeOut(2000);
   });
+  // click cancel
   $(document).on('click', '#cancel', function() {
     $('.edit-popup').fadeOut(2000);
   });
 }
 
+// function to show share popup
 function sharePopUp() {
+  // click share button
   $(document).on('click', '.share-button', function() {
     $('.share-popup').fadeIn(2000);
     var height = $('#share-popup').height();
@@ -484,7 +535,9 @@ function sharePopUp() {
   });
 }
 
+// function to share recipe
 function share() {
+  // click share popup
   $(document).on('click', '.share-popup', function() {
     $('.share-popup').fadeOut(2000);
     setTimeout("$('.share').css('display', 'block');", 5000);
@@ -494,14 +547,16 @@ function share() {
   });
 }
 
+// function to show run onboarding
 function onboarding() {
+  // click question mark buttton
   $(".onboarding-begin").click(function() {
     $('.onboarding-popup.first').fadeIn(1000);
     $('.onboarding-begin').css('display', 'none');
     $('.onboarding-cancel').css('display', 'block');
     $('.content').css('overflow-y', 'hidden');
   });
-
+  // click cancel button
   $(".onboarding-cancel").click(function() {
     $('.onboarding-popup.first').fadeOut(1000);
     $('.onboarding-popup.second').fadeOut(1000);
@@ -511,19 +566,19 @@ function onboarding() {
     $('.onboarding-cancel').css('display', 'none');
     $('.content').css('overflow-y', 'scroll');
   });
-
+  // click 1st next button
   $(".onboarding-button").click(function() {
     $('.onboarding-popup.first').fadeOut(1000);
     $('.onboarding-popup.second').fadeIn(1000);
     $('.onboarding-popup.second-piece').fadeIn(1000);
   });
-
+  // click 2nd next button
   $(".onboarding2-button").click(function() {
     $('.onboarding-popup.second').fadeOut(1000);
     $('.onboarding-popup.second-piece').fadeOut(1000);
     $('.onboarding-popup.third').fadeIn(1000);
   });
-
+  // click got it button
   $(".onboarding3-button").click(function() {
     $('.onboarding-popup.first').fadeOut(1000);
     $('.onboarding-popup.second').fadeOut(1000);
@@ -535,6 +590,8 @@ function onboarding() {
   });
 }
 
+// function to swipe delete
+// pulled from Swiped
 function swipeDelete() {
   Swiped.init({
     query: '.delete div',
@@ -545,6 +602,8 @@ function swipeDelete() {
   });
 }
 
+// function to run sliding transitions
+// pulled from jQuery Transit
 function transitions() {
   $(".link").fastClick(function () {
     screen = "#" + $(this).attr("page-load");
@@ -574,13 +633,3 @@ function transitions() {
     }
   });
 }
-
-$(document).ready(function() {
-  transitions();
-  changeHearts();
-  selectLifestyles();
-  editLifestyles();
-  search();
-  uncheck();
-  colexp();
-});
