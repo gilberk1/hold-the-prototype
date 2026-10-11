@@ -26,7 +26,7 @@ HTML, CSS, and JavaScript, plus the Transit, noUiSlider, and Swiped libraries.
 
 ## Try it
 
-- **Live demo:** (https://gilberk1.github.io/hold-the-prototype/index.html)
+- [**Live demo**](https://gilberk1.github.io/hold-the-prototype/index.html)
 
 
 ## Links
